@@ -14,6 +14,7 @@ function SignUp() {
         <div>
             <h1>RC Spots</h1>
             <div className="">
+                <h2>Sign Up</h2>
                 <form className="signInForm">
                     <fieldset>
                         {/* add username and something (ask) */}
