@@ -1,6 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 
 function SignIn() {
+
+    const [formObject, setFormObject] = useState([]);
+
+    const [email, setEmail] = useState([])
+    const [password, setPassword] = useState([])
+
+    function handleEmailInput(event){
+        setEmail(event.target.value)
+    }
+
+    function handlePasswordInput(event) {
+        setPassword(event.target.value)
+    }
 
     return (
         <div>
@@ -11,11 +24,13 @@ function SignIn() {
                     <fieldset>
                         <label>
                             <p>Email: </p>
-                            <input name="name" />
+                            <input name="email" />
                         </label>
                         <label>
                             <p>Password:</p>
-                            <input name="password" />
+                            <input name="password" 
+                            type="password"
+                            />
                         </label>
                         <button type="submit">Submit</button>
                     </fieldset>
