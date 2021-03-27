@@ -14,7 +14,7 @@ function SignUp() {
         console.log(username)
         console.log(password)
 
-        if(email === "" || username === "" || password === ""){
+        if (email === "" || username === "" || password === "") {
             alert("Not all fields filled out, please check your inputs")
             return
         }
@@ -25,7 +25,7 @@ function SignUp() {
         window.location.href = "/"
     }
 
-    function handleEmailInput(event){
+    function handleEmailInput(event) {
         setEmail(event.target.value)
     }
 
@@ -44,32 +44,32 @@ function SignUp() {
                 <h2>Sign Up</h2>
                 <form className="signInForm">
                     <fieldset>
-                       <label>
-                           <p>Username: </p>
-                           <input 
-                           onChange={handleUsernameInput}
-                           name="username" />
-                       </label>
+                        <label>
+                            <p>Username: </p>
+                            <input
+                                onChange={handleUsernameInput}
+                                name="username" />
+                        </label>
                         <label>
                             <p>Email: </p>
-                            <input 
-                            onChange={handleEmailInput}
-                            name="email" />
+                            <input
+                                onChange={handleEmailInput}
+                                name="email" />
                         </label>
                         <label>
                             <p>Password:</p>
-                            <input 
-                            onChange={handlePasswordInput}
-                            name="password"
-                            type="password"
+                            <input
+                                onChange={handlePasswordInput}
+                                name="password"
+                                type="password"
                             />
                         </label>
                     </fieldset>
                 </form>
             </div>
             <div>
-                <button 
-                onClick={handleSignUp}>Submit</button>
+                <button
+                    onClick={handleSignUp}>Submit</button>
             </div>
         </div>
     )
