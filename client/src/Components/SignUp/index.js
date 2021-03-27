@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import axios from "axios"
 
 function SignUp() {
 
@@ -13,14 +14,15 @@ function SignUp() {
         console.log(username)
         console.log(password)
 
-        if(email == "" || username == "" || password == ""){
+        if(email === "" || username === "" || password === ""){
             alert("Not all fields filled out, please check your inputs")
             return
         }
         // send info to database
+        // route to "/user"
+        // waiting on scheme and routes to be set up to sign up a user
 
-
-        // window.location.href = "/"
+        window.location.href = "/"
     }
 
     function handleEmailInput(event){
