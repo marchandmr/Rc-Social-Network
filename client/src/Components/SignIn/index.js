@@ -2,8 +2,6 @@ import React, { useState } from "react"
 
 function SignIn() {
 
-    const [formObject, setFormObject] = useState([]);
-
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([])
 
@@ -13,6 +11,19 @@ function SignIn() {
 
     function handlePasswordInput(event) {
         setPassword(event.target.value)
+        
+    }
+
+    function handleSignIn(event) {
+        event.preventDefault()
+        console.log(email)
+        console.log(password)
+
+        // send information to server with passport and switch 
+        // somehow with userid data?
+
+        // for now just switch pages to continue working
+        window.location.href="/Home"
     }
 
     return (
@@ -24,15 +35,21 @@ function SignIn() {
                     <fieldset>
                         <label>
                             <p>Email: </p>
-                            <input name="email" />
+                            <input 
+                            onChange={handleEmailInput}
+                            name="email" />
                         </label>
                         <label>
                             <p>Password:</p>
-                            <input name="password" 
+                            <input 
+                            onChange={handlePasswordInput}
+                            name="password" 
                             type="password"
                             />
                         </label>
-                        <button type="submit">Submit</button>
+                        <button 
+                        onClick={handleSignIn}
+                        type="submit">Submit</button>
                     </fieldset>
                 </form>
             </div>
