@@ -21,9 +21,9 @@ app.use(routes);
 
 
 //using passport to keep track of users login status
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // Connect to the Mongo DB

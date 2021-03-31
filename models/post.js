@@ -9,7 +9,7 @@ const PostSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
+        required: false
     },
     date: {
         type: Date,
