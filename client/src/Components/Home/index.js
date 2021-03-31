@@ -8,6 +8,7 @@ function Home(){
     useEffect(() =>{
         console.log("Content loaded")
 
+        // load posts with axios here??
 
     })
 
@@ -19,7 +20,7 @@ function Home(){
              <p>Your email is {localStorage.getItem("currentEmail")}</p>
              <h2>Post list goes under here</h2>
              <PostList>
-
+                
 
              </PostList>
         </div>

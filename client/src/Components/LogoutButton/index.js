@@ -6,6 +6,7 @@ function LogoutButton() {
         console.log("Logging out...")
         localStorage.setItem("currentUsername", "")
         localStorage.setItem("currentEmail", "")
+        
         // logout with passport
         window.location.href="/"
     }
