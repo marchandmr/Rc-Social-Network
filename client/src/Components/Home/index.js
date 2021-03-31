@@ -1,16 +1,18 @@
-import React, {Component, useEffect} from "react"
+import React, {Component, useEffect, useState} from "react"
 import LogoutButton from "../LogoutButton"
 import {PostList, ListItem} from "../PostList"
 
 
 function Home(){
 
+    const [postList, updatePostList] = useState([])
+
     useEffect(() =>{
         console.log("Content loaded")
 
         // load posts with axios here??
 
-    })
+    }, [postList])
 
     return(
         <div>
