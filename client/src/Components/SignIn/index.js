@@ -29,7 +29,7 @@ function SignIn(props) {
         // somehow with userid data?
         // dont forget to add username from login response? maybe in state
         props.update("Maya", email)
-        // window.location.href="/Home"
+        window.location.href="/Home"
         
     }
 
