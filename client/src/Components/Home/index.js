@@ -1,6 +1,6 @@
 import React, {Component, useEffect} from "react"
 import LogoutButton from "../LogoutButton"
-import PostList from "../PostList"
+import {PostList, ListItem} from "../PostList"
 
 
 function Home(){
