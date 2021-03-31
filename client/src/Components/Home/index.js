@@ -19,7 +19,6 @@ function Home() {
 
     function handleCreatePost() {
         console.log('Create a post!')
-
         // make the modal appear
         updateShowCreate(true)
 
@@ -28,6 +27,8 @@ function Home() {
     function handleSubmitPost(postObject){
         // submit the post via axios route
        
+        postObject.user_posted = localStorage.getItem("currentUsername")
+
         console.log(postObject)
         // hide modal and bring button back
         updateShowCreate(false)
