@@ -13,7 +13,7 @@ const PostSchema = new Schema({
     },
     user_posted: {
         type: String,
-        require: true
+        required: true
     },
     date: {
         type: Date,
