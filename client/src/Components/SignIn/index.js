@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 
-function SignIn() {
+function SignIn(props) {
 
-    const [formObject, setFormObject] = useState([]);
-
-    const [email, setEmail] = useState([])
-    const [password, setPassword] = useState([])
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     function handleEmailInput(event){
         setEmail(event.target.value)
@@ -13,6 +11,26 @@ function SignIn() {
 
     function handlePasswordInput(event) {
         setPassword(event.target.value)
+        
+    }
+
+    function handleSignIn(event) {
+        event.preventDefault()
+        console.log(email)
+        console.log(password)
+
+
+        if (email === "" || password === "") {
+            alert("Not all fields filled out, please check your inputs")
+            return
+        }
+
+        // send information to server with passport and switch 
+        // somehow with userid data?
+        // dont forget to add username from login response? maybe in state
+        props.update("Maya", email)
+        // window.location.href="/Home"
+        
     }
 
     return (
@@ -24,15 +42,21 @@ function SignIn() {
                     <fieldset>
                         <label>
                             <p>Email: </p>
-                            <input name="email" />
+                            <input 
+                            onChange={handleEmailInput}
+                            name="email" />
                         </label>
                         <label>
                             <p>Password:</p>
-                            <input name="password" 
+                            <input 
+                            onChange={handlePasswordInput}
+                            name="password" 
                             type="password"
                             />
                         </label>
-                        <button type="submit">Submit</button>
+                        <button 
+                        onClick={handleSignIn}
+                        type="submit">Submit</button>
                     </fieldset>
                 </form>
             </div>

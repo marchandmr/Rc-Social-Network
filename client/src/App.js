@@ -1,19 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Component } from 'react';
+import React from 'react';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
+import Home from './Components/Home'
 import Error404 from './Components/Error404'
 
 
 function App() {
+
+  function updateSession(name, email) {
+
+    localStorage.setItem("currentUsername", name)
+    localStorage.setItem("currentEmail", email)
+
+  }
+
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path={"/"} component={SignIn} />
+          <Route exact path={"/"}
+            render={(props) => (
+              <SignIn {...props} update={updateSession} />
+            )}
+          />
           <Route exact path={"/SignUp"} component={SignUp} />
+
+        
+            <Route path={"/Home"} component={Home}/>
+         
+
           <Route path={"*"} component={Error404} />
         </Switch>
       </Router>
