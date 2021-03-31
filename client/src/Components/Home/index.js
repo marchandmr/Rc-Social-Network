@@ -25,9 +25,10 @@ function Home() {
 
     }
 
-    function handleSubmitPost(){
+    function handleSubmitPost(postObject){
         // submit the post via axios route
-
+       
+        console.log(postObject)
         // hide modal and bring button back
         updateShowCreate(false)
     }
