@@ -20,7 +20,6 @@ function Home(){
              <p>Your email is {localStorage.getItem("currentEmail")}</p>
              <h2>Post list goes under here</h2>
              <PostList>
-                
 
              </PostList>
         </div>
