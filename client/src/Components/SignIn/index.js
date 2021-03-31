@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 
-function SignIn() {
+function SignIn(props) {
 
-    const [email, setEmail] = useState([])
-    const [password, setPassword] = useState([])
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     function handleEmailInput(event){
         setEmail(event.target.value)
@@ -19,11 +19,18 @@ function SignIn() {
         console.log(email)
         console.log(password)
 
+
+        if (email === "" || password === "") {
+            alert("Not all fields filled out, please check your inputs")
+            return
+        }
+
         // send information to server with passport and switch 
         // somehow with userid data?
-
-        // for now just switch pages to continue working
-        window.location.href="/Home"
+        // dont forget to add username from login response? maybe in state
+        props.update("Maya", email)
+        // window.location.href="/Home"
+        
     }
 
     return (
