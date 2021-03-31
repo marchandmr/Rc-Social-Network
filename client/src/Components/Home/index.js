@@ -1,29 +1,50 @@
-import React, {Component, useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
+import CreatePostBtn from "../CreatePostBtn"
+import CreatePostModal from "../CreatePostModal"
 import LogoutButton from "../LogoutButton"
-import {PostList, ListItem} from "../PostList"
+import { PostList, ListItem } from "../PostList"
 
 
-function Home(){
+function Home() {
 
     const [postList, updatePostList] = useState([])
+    const [showCreate, updateShowCreate] = useState(false)
 
-    useEffect(() =>{
-        console.log("Content loaded")
+    useEffect(() => {
 
         // load posts with axios here??
 
-    }, [postList])
+        console.log("Content loaded")
+    }, [postList, showCreate])
 
-    return(
+    function handleCreatePost() {
+        console.log('Create a post!')
+
+        // make the modal appear
+        updateShowCreate(true)
+
+    }
+
+    function handleSubmitPost(){
+        // submit the post via axios route
+
+        // hide modal and bring button back
+        updateShowCreate(false)
+    }
+
+    return (
         <div>
-             <h1>RC Spots</h1>
-             <LogoutButton/>
-             <p>Hello {localStorage.getItem("currentUsername")} </p>
-             <p>Your email is {localStorage.getItem("currentEmail")}</p>
-             <h2>Post list goes under here</h2>
-             <PostList>
+            <h1>RC Spots</h1>
+            <LogoutButton />
+            <p>Hello {localStorage.getItem("currentUsername")} </p>
+            <p>Your email is {localStorage.getItem("currentEmail")}</p>
+            {
+                showCreate? <CreatePostModal submitPost={handleSubmitPost}/> : <CreatePostBtn handleCreatePost={handleCreatePost} />
+            }
+            <h2>Post list goes under here</h2>
+            <PostList>
 
-             </PostList>
+            </PostList>
         </div>
     )
 }
