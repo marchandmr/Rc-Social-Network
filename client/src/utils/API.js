@@ -36,11 +36,11 @@ export default {
     },
     // Log the user in
     login: function (username, password) {
-        return axios.post('/api/login', { username, password });
+        return axios.post('/api/user/login', { username, password });
     },
     // New user registration
     signup: function (userData) {
-        return axios.post('/api/signup', userData);
+        return axios.post('/api/user/signup', userData);
     }
 };
 

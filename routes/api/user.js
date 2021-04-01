@@ -14,10 +14,10 @@ router
     .put(user.update)
     .delete(user.remove);
 
-// /api/signup is the route to create a user
+// /api/user/signup is the route to create a user
 router.post('/signup', user.signup);
 
-// /api/login
+// /api/user/login
 router.post('/login', passport.authenticate('local'), user.authenticate);
 
 module.exports = router;
