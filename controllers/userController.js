@@ -38,8 +38,8 @@ module.exports = {
     signup: (req, res) => {
         const { username, email, password, register_date } = req.body;
         // searches to see if email is available
-        db.User.findOne({ 'email': email }, (err, res) => {
-            if (res) {
+        db.User.findOne({ 'email': email }, (err, match) => {
+            if (match) {
                 return res.json({
                     error: `Username is taken`
                 });
