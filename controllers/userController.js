@@ -37,25 +37,18 @@ module.exports = {
 
     signup: (req, res) => {
         const { username, email, password, register_date } = req.body;
-        // searches to see if email is available
-        db.User.findOne({ 'email': email }, (err, match) => {
-            if (match) {
-                return res.json({
-                    error: `Username is taken`
-                });
-            }
-            // if email is available save the users info into the DB
-            const newUser = new db.User({
-                'username': username,
-                'email': email,
-                'password': password,
-                'register_date': register_date
-            });
-            newUser.save((err, newUser) => {
-                if (err) return res.json(err);
-                return res.json(newUser);
-            });
-        });
+        db.User.create({
+            'username': username,
+            'email': email,
+            'password': password,
+            'register_date': register_date
+        }
+
+        )
+            .then(((result) => {
+                console.log(result);
+                return res.json(result)
+            }))
     },
 
     authenticate: (req, res) => {
