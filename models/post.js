@@ -29,7 +29,7 @@ const PostSchema = new Schema({
     },
     exactlocation: {
         type: String,
-        required: true
+        required: false
     }
 })
 
