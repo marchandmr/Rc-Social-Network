@@ -27,7 +27,7 @@ function SignIn(props) {
 
         // send information to server with passport and switch 
         // somehow with userid data?
-        // dont forget to add username from login response? maybe in state
+        // dont forget to add username from login response
         props.update("Maya", email)
         window.location.href="/Home"
         
