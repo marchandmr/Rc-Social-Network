@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import API from "../../utils/API"
 
 function SignUp() {
 
@@ -22,7 +23,19 @@ function SignUp() {
         // pass username, email AND password
         // .then(response => {if response.data -> successful, go to login, else error})
 
-        window.location.href = "/"
+        API.signup({
+            username: username,
+            email: email,
+            password: password
+        }).then(response => {
+            if(response.data){
+                alert("Sign Up Successful")
+                window.location.href="/"
+            }
+        }).catch(error => {
+            console.log("Error: ", error)
+        })
+
     }
 
     function handleEmailInput(event) {
