@@ -43,17 +43,19 @@ function SignIn(props) {
         //     console.log("Error: ", error)
         // })
 
-        API.login({
-            email: email,
-            password:password
-        }).then(response =>{
-            if(response.status === 200 ){
-                console.log(response.data)
-            }
-        })
+        // API.login(email, password)
+        // .then(response =>{
+        //     if(response.status === 200 ){
+        //         console.log(response.data)
+        //     } else {
+        //         alert("Login Failed")
+        //     }
+        // }).catch(e => {
+        //     console.log("Error: ",e)
+        // })
 
-        props.update("Maya", email)
-        // window.location.href="/Home"
+        props.update("Jason", email)
+        window.location.href="/Home"
         
     }
 
@@ -89,7 +91,7 @@ function SignIn(props) {
                     e.preventDefault();
                     window.location.href = "/SignUp"
                 }}
-                    id="switchToSignUpBtn">Sign Up!
+                    id="switchToSignUpBtn">Sign Up Here!
                     </button>
             </div>
         </div>
