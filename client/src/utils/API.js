@@ -36,7 +36,8 @@ export default {
     },
     // Log the user in
     login: function (email, password) {
-        return axios.post('/api/user/login', { email, password });
+        console.log("TEST: ",email, password)
+        return axios.post('/api/user/login', { email: email, password: password });
     },
     // New user registration
     signup: function (userData) {
