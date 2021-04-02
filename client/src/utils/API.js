@@ -35,8 +35,8 @@ export default {
         return axios.delete("/api/user/" + id);
     },
     // Log the user in
-    login: function (username, password) {
-        return axios.post('/api/user/login', { username, password });
+    login: function (email, password) {
+        return axios.post('/api/user/login', { email, password });
     },
     // New user registration
     signup: function (userData) {
