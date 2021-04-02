@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import API from "../../utils/API"
 
 function SignIn(props) {
 
@@ -28,7 +29,32 @@ function SignIn(props) {
         // send information to server with passport and switch 
         // somehow with userid data?
         // dont forget to add username from login response
-        props.update("Maya", email)
+
+        //  API.signup({
+        //     username: username,
+        //     email: email,
+        //     password: password
+        // }).then(response => {
+        //     if(response.data){
+        //         alert("Sign Up Successful")
+        //         window.location.href="/"
+        //     }
+        // }).catch(error => {
+        //     console.log("Error: ", error)
+        // })
+
+        // API.login(email, password)
+        // .then(response =>{
+        //     if(response.status === 200 ){
+        //         console.log(response.data)
+        //     } else {
+        //         alert("Login Failed")
+        //     }
+        // }).catch(e => {
+        //     console.log("Error: ",e)
+        // })
+
+        props.update("Jason", email)
         window.location.href="/Home"
         
     }
@@ -65,7 +91,7 @@ function SignIn(props) {
                     e.preventDefault();
                     window.location.href = "/SignUp"
                 }}
-                    id="switchToSignUpBtn">Sign Up!
+                    id="switchToSignUpBtn">Sign Up Here!
                     </button>
             </div>
         </div>
