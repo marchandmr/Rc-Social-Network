@@ -24,7 +24,11 @@ export default {
     //     USER ROUTES
 
     findUser: function (email) {
-        return axios.get("/api/user", email);
+        return axios.get("/api/user/find", {
+            params: {
+                email: email.email
+            }
+        });
     },
     // Gets the post with the given id
     getUser: function (id) {

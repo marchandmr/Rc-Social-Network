@@ -3,7 +3,7 @@ const user = require("../../controllers/userController");
 const passport = require('../../config/passport');
 
 // Matches with "/api/user"
-router.route("/")
+router.route("/find")
     .get(user.findOne)
 
 
