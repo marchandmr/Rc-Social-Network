@@ -4,7 +4,7 @@ export default {
 
     //        POST Routes
 
-
+    /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
     getPosts: function () {
         return axios.get("/api/posts");
     },
