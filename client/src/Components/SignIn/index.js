@@ -31,23 +31,6 @@ function SignIn(props) {
         // dont forget to add username from login response
 
         API.login(email, password)
-<<<<<<< HEAD
-        .then(response =>{
-            if(response.status === 200 ){
-                window.location.href="/Home"
-                console.log(response.data)
-            } else {
-                alert("Login Failed")
-            }
-        }).catch(e => {
-            console.log("Error: ",e)
-        })
-
-        // local storage call
-        props.update("Jason", email)
-        
-        
-=======
             .then(response => {
                 if (response.status === 200) {
                     console.log(response.data)
@@ -61,7 +44,6 @@ function SignIn(props) {
         // local storage call
         props.update("Jason", email)
 
->>>>>>> main
     }
 
     return (
