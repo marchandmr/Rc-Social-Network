@@ -33,6 +33,7 @@ function SignIn(props) {
         API.login(email, password)
         .then(response =>{
             if(response.status === 200 ){
+                window.location.href="/Home"
                 console.log(response.data)
             } else {
                 alert("Login Failed")
@@ -43,7 +44,7 @@ function SignIn(props) {
 
         // local storage call
         props.update("Jason", email)
-        window.location.href="/Home"
+        
         
     }
 
