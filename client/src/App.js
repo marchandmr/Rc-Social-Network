@@ -10,9 +10,9 @@ import Error404 from './Components/Error404'
 
 function App() {
 
-  function updateSession(name, email) {
+  function updateSession(email) {
 
-    localStorage.setItem("currentUsername", name)
+    // localStorage.setItem("currentUsername", name)
     localStorage.setItem("currentEmail", email)
 
   }

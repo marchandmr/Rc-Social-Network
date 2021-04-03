@@ -42,7 +42,7 @@ function SignIn(props) {
             })
 
         // local storage call
-        props.update("Jason", email)
+        props.update(email)
 
     }
 
