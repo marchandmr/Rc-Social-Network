@@ -23,8 +23,8 @@ export default {
 
     //     USER ROUTES
 
-    getUsers: function () {
-        return axios.get("/api/user");
+    findUser: function (email) {
+        return axios.get("/api/user", email);
     },
     // Gets the post with the given id
     getUser: function (id) {
@@ -43,6 +43,11 @@ export default {
     // New user registration
     signup: function (userData) {
         return axios.post('/api/user/signup', userData);
+    },
+
+    //logout 
+    logout: function () {
+        return axios.post('/api/user/logout');
     }
 };
 
