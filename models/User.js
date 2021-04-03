@@ -24,32 +24,32 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.pre('save', function (next) {
-    var user = this;
+UserSchema.pre("save", function (next) {
+    const user = this
 
-    // only hash the password if it has been modified (or is new)
-    if (!user.isModified('password')) return next();
+    if (this.isModified("password") || this.isNew) {
+        bcrypt.genSalt(10, function (saltError, salt) {
+            if (saltError) {
+                return next(saltError)
+            } else {
+                bcrypt.hash(user.password, salt, function (hashError, hash) {
+                    if (hashError) {
+                        return next(hashError)
+                    }
 
-    // generate a salt
-    bcrypt.genSalt(10, function (err, salt) {
-        if (err) return next(err);
+                    user.password = hash
+                    next()
+                })
+            }
+        })
+    } else {
+        return next()
+    }
+})
 
-        // hash the password using our new salt
-        bcrypt.hash(user.password, salt, function (err, hash) {
-            if (err) return next(err);
-            // override the cleartext password with the hashed one
-            user.password = hash;
-            next();
-        });
-    });
-});
-
-UserSchema.methods.comparePassword = function (candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
-        if (err) return cb(err);
-        cb(null, isMatch);
-    });
-};
+UserSchema.methods.comparePassword = function (password) {
+    return bcrypt.compareSync(password, this.password)
+}
 
 
 

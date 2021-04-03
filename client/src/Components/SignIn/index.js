@@ -6,13 +6,13 @@ function SignIn(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    function handleEmailInput(event){
+    function handleEmailInput(event) {
         setEmail(event.target.value)
     }
 
     function handlePasswordInput(event) {
         setPassword(event.target.value)
-        
+
     }
 
     function handleSignIn(event) {
@@ -31,6 +31,7 @@ function SignIn(props) {
         // dont forget to add username from login response
 
         API.login(email, password)
+<<<<<<< HEAD
         .then(response =>{
             if(response.status === 200 ){
                 window.location.href="/Home"
@@ -46,6 +47,21 @@ function SignIn(props) {
         props.update("Jason", email)
         
         
+=======
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response.data)
+                    window.location.href = "/Home"
+                }
+                
+            }).catch(e => {
+                console.log("Error: ", e)
+            })
+
+        // local storage call
+        props.update("Jason", email)
+
+>>>>>>> main
     }
 
     return (
@@ -57,21 +73,21 @@ function SignIn(props) {
                     <fieldset>
                         <label>
                             <p>Email: </p>
-                            <input 
-                            onChange={handleEmailInput}
-                            name="email" />
+                            <input
+                                onChange={handleEmailInput}
+                                name="email" />
                         </label>
                         <label>
                             <p>Password:</p>
-                            <input 
-                            onChange={handlePasswordInput}
-                            name="password" 
-                            type="password"
+                            <input
+                                onChange={handlePasswordInput}
+                                name="password"
+                                type="password"
                             />
                         </label>
-                        <button 
-                        onClick={handleSignIn}
-                        type="submit">Submit</button>
+                        <button
+                            onClick={handleSignIn}
+                            type="submit">Submit</button>
                     </fieldset>
                 </form>
             </div>

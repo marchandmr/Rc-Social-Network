@@ -1,3 +1,4 @@
+const { json } = require("express");
 const db = require("../models");
 
 // Defining methods for the postController
@@ -15,6 +16,16 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+
+    // find username based on email 
+    findOne: function (req, res) {
+        db.User
+            .findOne({ email: req.query })
+            .then(dbModel => res.json(dbModel.username))
+        console.log(dbModel)
+            .catch(err => res.status(422) / json(err));
+    },
+
     create: function (req, res) {
         db.User
             .create(req.body)
@@ -51,11 +62,9 @@ module.exports = {
             }))
     },
 
-    authenticate: (req, res) => {
-        res.json({
-            email: req.user.email,
-            id: req.user.id
-        })
+    logout: (req, res) => {
+        req.logout();
+
     }
 
 

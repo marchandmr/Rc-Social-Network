@@ -4,8 +4,8 @@ const passport = require('../../config/passport');
 
 // Matches with "/api/user"
 router.route("/")
-    .get(user.findAll)
-    .post(user.create);
+    .get(user.findOne)
+
 
 // Matches with "/api/user/:id"
 router
@@ -18,6 +18,16 @@ router
 router.post('/signup', user.signup);
 
 // /api/user/login
-router.post('/login', passport.authenticate('local'), user.authenticate);
+router.post('/login', passport.authenticate('local'), (req, res) => {
+    console.log("REQ:" + req)
+    res.json({
+        email: req.body.email
+
+    });
+});
+
+//logout  /api/user/logout
+router.post('/logout', user.logout);
+
 
 module.exports = router;
