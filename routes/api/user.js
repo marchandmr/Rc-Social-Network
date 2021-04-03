@@ -18,6 +18,12 @@ router
 router.post('/signup', user.signup);
 
 // /api/user/login
-router.post('/login', passport.authenticate('local'), user.authenticate);
+router.post('/login', passport.authenticate('local'), (req, res) => {
+    console.log("REQ:" + req)
+    res.json({
+        email: req.body.email
+
+    });
+});
 
 module.exports = router;
