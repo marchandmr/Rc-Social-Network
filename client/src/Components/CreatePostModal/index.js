@@ -25,7 +25,7 @@ function CreatePostModal(props) {
 
         formdata.append('image', fileData);
 
-        await Axios.post("http://localhost:3001/api/image/image", formdata)
+        await Axios.post("/api/image/image", formdata)
             .then((res) => console.log("res", res.data))
             .catch((error) => console.error(error));
     };
@@ -52,8 +52,9 @@ function CreatePostModal(props) {
             />
             <StateSelector handleInputChange={handleInputChange}/>
         </form>
-
             <button onClick={()=>submitPost( formObject )}>Submit</button>
+
+
             <form onSubmit={handleSubmit}>
             <CustomInput
                 type='file'
@@ -67,9 +68,8 @@ function CreatePostModal(props) {
             <button>submit</button>
         </form>
 
-    </div>
 
-    
+    </div>    
     )
 }
 
