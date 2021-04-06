@@ -25,7 +25,7 @@ function CreatePostModal(props) {
 
         formdata.append('image', fileData);
 
-        await Axios.post("/api/image/image", formdata)
+        await Axios.post("/api/image/", formdata)
             .then((res) => console.log("res", res.data))
             .catch((error) => console.error(error));
     };
