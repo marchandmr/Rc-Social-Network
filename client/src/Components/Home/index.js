@@ -5,6 +5,9 @@ import CreatePostModal from "../CreatePostModal"
 import LogoutButton from "../LogoutButton"
 import { PostList, ListItem } from "../PostList"
 
+const USERNAME = "currentUsername"
+const EMAIL = "currentEmail"
+
 
 function Home() {
 
@@ -14,8 +17,17 @@ function Home() {
     function loadUsername() {
         console.log("Loading username....")
         // axios here....
-
-        localStorage.setItem("currentUsername", "Maya Naeuri")
+        
+        API.findUser({
+            email: localStorage.getItem(EMAIL)
+        })
+        .then(res =>{
+            console.log("RESPONSE: ", res)
+        })
+        .catch(e => {
+            console.log(e)
+        })
+        // localStorage.setItem(USERNAME, "Maya Naeuri")
     }
 
     useEffect(() => { loadUsername() }, [])
@@ -25,7 +37,7 @@ function Home() {
         // load posts with axios here??
         API.getPosts()
         .then(res => {
-            console.log("Get posts: ", res)
+            // console.log("Get posts: ", res)
             console.log("Content loaded")
         })
        

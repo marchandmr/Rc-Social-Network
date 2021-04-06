@@ -12,7 +12,6 @@ function App() {
 
   function updateSession(email) {
 
-    // localStorage.setItem("currentUsername", name)
     localStorage.setItem("currentEmail", email)
 
   }

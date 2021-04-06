@@ -1,14 +1,15 @@
-import react from "react"
+import API from "../../utils/API"
 
 function LogoutButton() {
 
     function handleLogout() {
         console.log("Logging out...")
-        localStorage.setItem("currentUsername", "")
-        localStorage.setItem("currentEmail", "")
         
         // logout with passport
+        API.logout()
         window.location.href="/"
+        localStorage.setItem("currentUsername", "")
+        localStorage.setItem("currentEmail", "")
     }
 
     return (<button onClick={handleLogout}>Logout</button>)
