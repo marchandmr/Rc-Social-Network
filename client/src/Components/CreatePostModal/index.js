@@ -19,13 +19,13 @@ function CreatePostModal(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log()
+        console.log(handleSubmit)
 
         const formdata = new FormData();
 
         formdata.append('image', fileData);
 
-        await Axios.post("/api/image/image", formdata)
+        await Axios.post("/api/posts/image/", formdata)
             .then((res) => console.log("res", res.data))
             .catch((error) => console.error(error));
     };

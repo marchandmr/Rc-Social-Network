@@ -1,16 +1,16 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
 
-const ImageUpload = new Schema (
-    {
-        image: {
-            type: String,
-            required: true
-        },
-    },
-    {
-        timestamps: true
-    }
-);
+// const ImageUpload = new Schema (
+//     {
+//         image: {
+//             type: String,
+//             required: true
+//         },
+//     },
+//     {
+//         timestamps: true
+//     }
+// );
 
-module.exports = mongoose.model("images", ImageUpload)
+// module.exports = mongoose.model("images", ImageUpload)
