@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const PostSchema = new Schema({
     body: {
         type: String,
-        required: true
+        required: false
     },
     image: {
         type: String,
@@ -13,7 +13,7 @@ const PostSchema = new Schema({
     },
     user_posted: {
         type: String,
-        required: true
+        required: false
     },
     date: {
         type: Date,
@@ -21,11 +21,11 @@ const PostSchema = new Schema({
     },
     city: {
         type: String,
-        required: true
+        required: false
     },
     state: {
         type: String,
-        required: true
+        required: false
     },
     exactlocation: {
         type: String,
