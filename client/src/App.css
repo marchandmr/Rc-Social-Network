@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: url("../src/assets/img/footer_lodyas.png");
+}
+
+
+.jumbo {
+  background-color: #003566 !important;
+  font-family: 'Racing Sans One', cursive;;
+  color: white !important;
+  
+}
+
+.mainHeader {
+  color: white;  
+  font-size: 100px !important;
+}
+
+.loginTitle {
+  color: seashell;
+}

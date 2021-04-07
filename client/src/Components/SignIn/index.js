@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import API from "../../utils/API"
+import Jumbotron from "react-bootstrap/Jumbotron"
 
 function SignIn(props) {
 
@@ -48,19 +49,21 @@ function SignIn(props) {
 
     return (
         <div>
-            <h1>RC Spots</h1>
+            <Jumbotron className="jumbo">
+            <h1 className="mainHeader">RC Spots</h1>
+            </Jumbotron>
             <div className="">
-                <h2>Sign In</h2>
+                <h2 className="loginTitle">Sign In</h2>
                 <form className="signInForm">
                     <fieldset>
                         <label>
-                            <p>Email: </p>
+                            <p className="loginTitle">Email: </p>
                             <input
                                 onChange={handleEmailInput}
                                 name="email" />
                         </label>
                         <label>
-                            <p>Password:</p>
+                            <p className="loginTitle">Password:</p>
                             <input
                                 onChange={handlePasswordInput}
                                 name="password"

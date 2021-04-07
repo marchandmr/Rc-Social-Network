@@ -21,6 +21,10 @@ export default {
         return axios.post("/api/posts", postData);
     },
 
+    createImage: function (formdata) {
+        return axios.post("/api/posts/image", formdata)
+    },
+
     //     USER ROUTES
 
     findUser: function (email) {
