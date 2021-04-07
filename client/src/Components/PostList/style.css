@@ -1,7 +1,17 @@
 .list-overflow-container {
     max-height: 800px;
+    min-height: 200px;
+    max-width: 500px;
     border: 1px #DDDDDD solid;
     border-radius: 4px;
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .itemImg {
+   float: left;
   }
