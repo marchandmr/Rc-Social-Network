@@ -23,11 +23,15 @@ export function ListItem(props) {
         return m.format('LL')
     }
 
+    function processImage() {
+        return ""
+    }
+
     return (
         <div>
             <li className="list-group-item">
                 <h3>{props.user}</h3>
-                <img className="itemImg" src="https://picsum.photos/200"></img>
+                <img className="itemImg" src={processImage()}></img>
                 <p className="itemDate">Date: {processDate(props.date)}</p>
                 <p className="itemCity">{props.city}</p>
                 <p className="itemState">{props.state}</p>

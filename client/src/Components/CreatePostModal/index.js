@@ -26,7 +26,12 @@ function CreatePostModal(props) {
         formdata.append('image', fileData);
 
         await Axios.post("/api/posts/image/", formdata)
-            .then((res) => console.log("res", res.data))
+            .then((res) => {
+                console.log("res", res.data)
+                // get the cloudinary url link from res.data somewhere
+                // add that data to Jason's form object state
+                // call props.submitPost(formObject)
+            })
             .catch((error) => console.error(error));
     };
 
@@ -37,8 +42,6 @@ function CreatePostModal(props) {
     }
 
     const {submitPost} = props
-
-
 
     return(
     <div id="postModal" className="wrapper">
@@ -52,6 +55,7 @@ function CreatePostModal(props) {
             />
             <StateSelector handleInputChange={handleInputChange}/>
         </form>
+            {/* probably change this to oscars handle submit, not passing form object */}
             <button onClick={()=>submitPost( formObject )}>Submit</button>
 
 

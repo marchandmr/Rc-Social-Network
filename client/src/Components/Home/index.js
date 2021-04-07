@@ -107,6 +107,7 @@ function Home() {
                                 date={post.date}
                                 state={post.state}
                                 body={post.body}
+                                imageLink={post.image}
                             />
                         )
                     })}
