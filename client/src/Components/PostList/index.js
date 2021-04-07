@@ -1,21 +1,39 @@
 import React from "react"
+import moment from "moment"
 import "./style.css"
 
-export function PostList() {
+export function PostList({ children }) {
 
 
     return (
 
         <div className="list-overflow-container" >
-            <ul className="list-group">
-                {/* List items go in here */}
+            <ul className="list-group row">
+                <div className="col">
+                    {children}
+                </div>
             </ul>
         </div>
 
     )
 }
 
-export function ListItem() {
-    return <li className="list-group-item"></li>;
+export function ListItem(props) {
+
+    function processDate(date){
+        let m = moment(date, 'YYYY-MM-DD')
+        return m.format('LL')
+    }
+
+    return (
+        <li className="list-group-item">
+            <h3>{props.user}</h3>
+            <img className="itemImg" src="https://picsum.photos/200"></img>
+            <p className="itemDate">Date: {processDate(props.date)}</p>
+            <p className="itemCity">{props.city}</p>
+            <p className="itemState">{props.state}</p>
+            <p className="itemBody">{props.body}</p>
+        </li>
+    )
 }
 

@@ -26,7 +26,8 @@ export default {
     findUser: function (email) {
         return axios.get("/api/user/find", {
             params: {
-                email: email.email
+                email: email.email,
+                cat: "garfield"
             }
         });
     },

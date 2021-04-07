@@ -19,8 +19,6 @@ module.exports = {
 
     // find username based on email 
     findOne: function (req, res) {
-
-        console.log("REQUEST: ******************\n", req.query)
         db.User
             .findOne({ email: req.query.email })
             .then(dbModel => res.json(dbModel.username))

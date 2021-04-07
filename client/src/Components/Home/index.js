@@ -5,6 +5,9 @@ import CreatePostModal from "../CreatePostModal"
 import LogoutButton from "../LogoutButton"
 import { PostList, ListItem } from "../PostList"
 
+const USERNAME = "currentUsername"
+const EMAIL = "currentEmail"
+
 
 function Home() {
 
@@ -15,21 +18,31 @@ function Home() {
         console.log("Loading username....")
         // axios here....
 
-        localStorage.setItem("currentUsername", "Maya Naeuri")
+        API.findUser({
+            email: localStorage.getItem(EMAIL)
+        })
+            .then(res => {
+                console.log("RESPONSE: ", res)
+                localStorage.setItem(USERNAME, res.data)
+            })
+            .catch(e => {
+                console.log(e)
+            })
     }
-
-    useEffect(() => { loadUsername() }, [])
-
     useEffect(() => {
 
         // load posts with axios here??
         API.getPosts()
-        .then(res => {
-            console.log("Get posts: ", res)
-            console.log("Content loaded")
-        })
-       
-    }, [postList])
+            .then(res => {
+                console.log("Content loaded")
+                console.log(res.data)
+                updatePostList(res.data)
+            })
+
+    }, [])
+
+    useEffect(() => { loadUsername() }, [])
+
 
 
     function handleCreatePost() {
@@ -47,10 +60,10 @@ function Home() {
     }
 
     function handleSubmitPost(postObject) {
-        
+
         postObject.user_posted = localStorage.getItem("currentUsername")
 
-        
+
         if (verifyPostInputs(postObject)) {
             // hide modal and bring button back
             updateShowCreate(false)
@@ -80,6 +93,19 @@ function Home() {
             <h2>Post list goes under here</h2>
             <PostList>
 
+                {
+                    postList.map(post => {
+                        return (
+                            <ListItem
+                                key={post._id}
+                                user={post.user_posted}
+                                city={post.city}
+                                date={post.date}
+                                state={post.state}
+                                body={post.body}
+                            />
+                        )
+                    })}
             </PostList>
         </div>
     )

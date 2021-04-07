@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import axios from "axios"
 import API from "../../utils/API"
 
 function SignUp() {
@@ -16,13 +15,7 @@ function SignUp() {
             alert("Not all fields filled out, please check your inputs")
             return
         }
-        // send info to database
-        // route to "/user"
-        // waiting on scheme and routes to be set up to sign up a user
-        // axios post to /user
-        // pass username, email AND password
-        // .then(response => {if response.data -> successful, go to login, else error})
-
+      
         API.signup({
             username: username,
             email: email,
