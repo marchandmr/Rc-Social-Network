@@ -13,6 +13,7 @@ function Home() {
 
     const [postList, updatePostList] = useState([])
     const [showCreate, updateShowCreate] = useState(false)
+    const [loadSwitch, updateLoadSwitch] = useState(false)
 
     function loadUsername() {
         console.log("Loading username....")
@@ -24,11 +25,14 @@ function Home() {
             .then(res => {
                 console.log("RESPONSE: ", res)
                 localStorage.setItem(USERNAME, res.data)
+                updateLoadSwitch(!loadSwitch)
             })
             .catch(e => {
                 console.log(e)
             })
+            
     }
+
     useEffect(() => {
 
         // load posts with axios here??
@@ -39,7 +43,7 @@ function Home() {
                 updatePostList(res.data)
             })
 
-    }, [])
+    }, [loadSwitch])
 
     useEffect(() => { loadUsername() }, [])
 
@@ -103,6 +107,7 @@ function Home() {
                                 date={post.date}
                                 state={post.state}
                                 body={post.body}
+                                imageLink={post.image}
                             />
                         )
                     })}

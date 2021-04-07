@@ -12,7 +12,7 @@ function LogoutButton() {
         localStorage.setItem("currentEmail", "")
     }
 
-    return (<button onClick={handleLogout}>Logout</button>)
+    return (<button onClick={handleLogout}>Logout <i className="fa fa-sign-out" aria-hidden="true"></i></button>)
 }
 
 export default LogoutButton
