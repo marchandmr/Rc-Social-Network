@@ -1,19 +1,19 @@
 .App {
   text-align: center;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -49,6 +49,11 @@ body {
   background-size: cover;
   /* height: 100% !important; */
   
+}
+
+.postInfo {
+  border: solid;
+  /* line-height: 100%; */
 }
 
 .navTitle {
@@ -91,6 +96,25 @@ body {
   color: white !important; 
   
 }
+
+.list-overflow-container{
+  /* background-color: red; */
+  border: none;
+}
+
+.list-group{
+  background-color: goldenrod;  
+  /* border: none; */
+}
+
+.list-group-item{
+  background-color: hotpink;
+}
+
+
+
+
+
 .circleIcons {
  /* padding-left: 210px; */
  color: white

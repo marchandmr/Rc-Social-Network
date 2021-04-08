@@ -7,6 +7,8 @@ import { PostList, ListItem } from "../PostList"
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 
 const USERNAME = "currentUsername"
@@ -141,12 +143,20 @@ function Home() {
                 showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
             }
             <LogoutButton />
-            <h2>Feed</h2>
-            <Container>
+            {/* <Container fluid className="posts"> */}
+                <Row className="postsHeader">
+                    <Col>
+                    <h2>Feed</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    
+            {/* <h2>Feed</h2> */}
+            
             <PostList>
 
-                {
-                    postList.map(post => {
+                {postList.map(post => {
                         return (
                             <ListItem
                                 key={post._id}
@@ -160,7 +170,13 @@ function Home() {
                         )
                     })}
             </PostList>
-            </Container>
+            
+            </Col>
+                </Row>
+
+
+            {/* </Container> */}
+            
             </div>
         </div>
     )
