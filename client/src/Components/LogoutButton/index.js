@@ -12,12 +12,11 @@ function LogoutButton() {
         localStorage.setItem("currentEmail", "")
     }
 
-    return (<button className="circlebtn" onClick={handleLogout}>
-     {/* <i className="fa fa-sign-out" aria-hidden="true"></i> */}
+    return (<button className="circlebtn" onClick={handleLogout}>     
      <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
-                    <i className="fas fa-door-open fa-stack-1x fa-inverse circleIcons"></i>
-                </span> 
+        <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
+        <i className="fas fa-door-open fa-stack-1x fa-inverse circleIcons"></i>
+     </span> 
      </button>)
 }
 

@@ -108,28 +108,8 @@ function Home() {
             </Navbar>
             <div className="postPage">
             <br />
+            <br />         
             <br />        
-                {/* <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
-                    <i className="fas fa-home fa-stack-1x circleIcons"></i>
-                </span>
-             */}
-            
-                {/* <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
-                    <i className="fas fa-pencil-alt fa-stack-1x circleIcons"></i>
-                </span>
-             */}
-                {/* <CreatePostBtn />
-                <LogoutButton /> */}
-                {/* <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
-                    <i className="fas fa-door-open fa-stack-1x fa-inverse circleIcons"></i>
-                </span> */}
-                
-            <br />
-            
-            
             {/* <h1>RC Spots</h1> */}
             {/* <LogoutButton /> */}
             {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
