@@ -16,10 +16,10 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     UploadImage: function (req, res) {
-        db.Post
-            .create({image: req.file.path})
-            .then(dbModel => res.json(dbModel))            
-            .catch(err => res.status(400).json(err))
+
+        res.json({
+            image: req.file.path
+        })
     },
     create: function (req, res) {
         db.Post
