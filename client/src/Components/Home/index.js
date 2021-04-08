@@ -66,8 +66,12 @@ function Home() {
     function handleSubmitPost(postObject) {
 
         postObject.user_posted = localStorage.getItem("currentUsername")
+        postObject.image = localStorage.getItem("imageLink")
 
-
+        console.log("POSTING WITH THIS INFORMATION: ", postObject)
+        
+        // free up local storage
+        localStorage.setItem("imageLink", "")
         if (verifyPostInputs(postObject)) {
             // hide modal and bring button back
             updateShowCreate(false)

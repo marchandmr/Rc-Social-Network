@@ -9,6 +9,7 @@ import API from "../../utils/API";
 function CreatePostModal(props) {
 
     const[formObject, setFormObject] = useState({})
+    const[imageLink, setImageLink] = useState("")
 
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
@@ -20,25 +21,31 @@ function CreatePostModal(props) {
         setFile(target.value)
     };
 
-    function handleSubmit (event){
-        event.preventDefault();
-        console.log(handleSubmit)
+    const handleSubmit = async () => {
+        // e.preventDefault();
 
         const formdata = new FormData();
 
         formdata.append('image', fileData);
 
-        API.createImage(formdata)
-            .then(res =>
-                setFormObject(res.data.image)
-                // console.log("res", res.data)
-                // console.log(res.data.image)
-                
-                // get the cloudinary url link from res.data somewhere
-                // add that data to Jason's form object state
-                // call props.submitPost(formObject)
-            )
-            .catch((error) => console.error(error));
+        // if there is no image to upload, skip cloudinary
+        if(!fileData){
+            localStorage.setItem("imageLink", "")
+            props.submitPost(formObject)
+
+        } else{ //otherwise there is an image to upload
+            await Axios.post("/api/posts/image/", formdata)
+                .then((res) => {
+                    console.log("CLOUDINARY RESPONSE", String(res.data.image))
+                    // get the cloudinary url link from res.data somewhere
+                    // add that data to Jason's form object state
+                    localStorage.setItem("imageLink", res.data.image)
+                    // call props.submitPost(formObject)
+                    props.submitPost(formObject)
+                })
+                .catch((error) => console.error(error));
+
+        }
     };
 
     //<---------------------------------------
@@ -62,13 +69,25 @@ function CreatePostModal(props) {
 
             {/* state selector tx-ks-ark */}
             <StateSelector handleInputChange={handleInputChange}/>
+            {/* image uploader */}
+            <CustomInput
+                type='file'
+                value={images}
+                name='file'
+                accept="image/*"
+                onChange={handleFileChange}
+                placeholder='upload image'
+                isRequired={true}
+            />
         </form>
+
+
             {/* probably change this to oscars handle submit, not passing form object */}
-            {/* <button onClick={()=>submitPost( formObject )}>Submit</button> */}
+            <button onClick={()=>handleSubmit()}>Submit</button>
 
 
-            <form onSubmit={handleSubmit}>
-            <Form.File
+            {/* <form onSubmit={handleSubmit}>
+            <CustomInput
                 type='file'
                 value={images}
                 name='file'
@@ -77,9 +96,8 @@ function CreatePostModal(props) {
                 placeholder='upload image'
                 // isRequired={true}
             />
-            {/* <button>submit</button> */}
-            <button onClick={()=>submitPost( formObject )}>Submit</button>
-        </form>
+            <button>submit</button>
+        </form> */}
 
 
     </div>    
