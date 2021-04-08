@@ -51,7 +51,10 @@ body {
   
 }
 
-
+.navTitle {
+  font-family: 'Racing Sans One', cursive;;
+  font-size: 29px !important;
+}
 .rightSide {
   /* background-image: url("../src/assets/img/footer_lodyas.png"); */
   background-image: url("../src/assets/img/bo_play_pattern.png");
@@ -88,7 +91,18 @@ body {
   color: white !important; 
   
 }
+.circleIcons {
+ /* padding-left: 210px; */
+ color: white
+ 
+  
+}
 
+.postPage {
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .mainImage {
   /* display: block; */
   /* margin-top: -500px; */

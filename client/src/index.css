@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-button {
+/* button {
 	box-shadow: 3px 4px 0px -1px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
 	background-color:#ededed;
@@ -34,5 +34,11 @@ button:hover {
 button:active {
 	position:relative;
 	top:1px;
+} */
+
+.circlebtn {
+	padding: 0;
+	border: none;
+	background: none;
 }
 
