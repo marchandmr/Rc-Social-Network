@@ -17,7 +17,7 @@ const storage = new CloudinaryStorage({
     params: {
         folder: "RC Social",
         format: async () => "jpeg",
-        transformation: [{ width: 500, height: 500, crop: "limit"}],
+        transformation: [{ width: 500, height: 500, crop: "limit" }],
         public_id: (req, file) => file.filename,
     },
 });
