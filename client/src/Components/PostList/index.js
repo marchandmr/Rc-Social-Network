@@ -37,7 +37,7 @@ export function ListItem(props) {
                 <Container fluid>
                     <Row>
                         <Col>
-                            <img fluid className="itemImg" src={props.imageLink} alt="userimage"></img>
+                            <a href={props.imageLink}><img fluid className="itemImg" src={props.imageLink} alt="userimage"></img> </a>
 
 
                         </Col>

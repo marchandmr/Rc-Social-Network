@@ -41,7 +41,7 @@ function SignIn(props) {
                     console.log(response.data)
                     window.location.href = "/Home"
                 }
-                
+
             }).catch(e => {
                 console.log("Error: ", e)
             })
@@ -55,65 +55,68 @@ function SignIn(props) {
         <div>
             {/* <Container fluid> */}
 
-                <Row className="RowTest" noGutters={true}>
+            <Row className="RowTest" noGutters={true}>
 
                 <Col className="leftSide" sm={8} noGutters={true}>
 
-                
-                {/* <Image className="mainImage" src={Picture2} fluid/> */}
-                
+
+                    {/* <Image className="mainImage" src={Picture2} fluid/> */}
+
                 </Col>
 
 
                 <Col className="rightSide" sm={4} noGutters={true}>
 
-            
-            <Jumbotron className="jumbo" fluid={true} nogutters="true">
-            <h1 className="mainHeader">RC Spots</h1>
-            </Jumbotron>
-            
-            <div className="signIn">
-                <h2 className="loginTitle">Sign In</h2>
-                <form className="signInForm">
-                    <fieldset>
-                        <label>
-                            <p className="loginSmallTitle">Email: </p>
-                            <input
-                                onChange={handleEmailInput}
-                                name="email" />
-                        </label>
-                        <br />                        
-                        <label>
-                            <p className="loginSmallTitle">Password:</p>
-                            <input
-                                onChange={handlePasswordInput}
-                                name="password"
-                                type="password"
-                            />
-                        </label>
-                        <br />
-                        <button
-                            onClick={handleSignIn}
-                            type="submit">Submit</button>
-                    </fieldset>
-                </form>
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div>
-                <button onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/SignUp"
-                }}
-                    id="switchToSignUpBtn">Sign Up Here!
-                    </button>
-            </div>
-            </Col>
+
+                    <Jumbotron className="jumbo" fluid={true} nogutters="true">
+                        <h1 className="mainHeader">RC Spots</h1>
+                    </Jumbotron>
+
+                    <div className="signIn">
+                        <h2 className="loginTitle">Sign In</h2>
+                        <form className="signInForm">
+                            <fieldset>
+                                <label>
+                                    <p className="loginSmallTitle">Email: </p>
+                                    <input
+                                        onChange={handleEmailInput}
+                                        name="email" />
+                                </label>
+                                <br />
+                                <label>
+                                    <p className="loginSmallTitle">Password:</p>
+                                    <input
+                                        onChange={handlePasswordInput}
+                                        name="password"
+                                        type="password"
+                                    />
+                                </label>
+                                <br />
+                                <button
+                                    onClick={handleSignIn}
+                                    type="submit">Submit</button>
+                                <br></br>
+                                <br></br>
+                                <a href="/SignUp">Sign up Here!</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div>
+                        {/* <button onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = "/SignUp"
+                        }}
+                            id="switchToSignUpBtn">Sign Up Here!
+                    </button> */}
+                    </div>
+                </Col>
             </Row>
             {/* </Container> */}
         </div>
