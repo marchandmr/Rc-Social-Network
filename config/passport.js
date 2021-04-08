@@ -11,8 +11,7 @@ passport.use(
       usernameField: "email"
     },
     (email, password, done) => {
-      console.log(email)
-      console.log(password)
+
       // When a user tries to sign in this code runs
       db.User.findOne(
 
@@ -20,7 +19,7 @@ passport.use(
           email: email
         }
       ).then(dbUser => {
-        console.log(dbUser + "dbuser!!!")
+
         // If there's no user with the given email
         if (!dbUser) {
           return done(null, false, {
