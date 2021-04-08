@@ -1,6 +1,14 @@
 import React, { useState } from "react"
 import API from "../../utils/API"
 import Jumbotron from "react-bootstrap/Jumbotron"
+// import Jumbotron from "../Jumbotron/index";
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Carousel from 'react-bootstrap/Carousel'
+import Picture1 from '../../assets/img/carousel1.jpg'
+import Picture2 from '../../assets/img/carousel2.jpg'
+import Image from 'react-bootstrap/Image'
 
 function SignIn(props) {
 
@@ -49,33 +57,58 @@ function SignIn(props) {
 
     return (
         <div>
-            <Jumbotron className="jumbo">
+            {/* <Container fluid> */}
+
+                <Row className="RowTest" noGutters={true}>
+
+                <Col className="leftSide" sm={8} noGutters={true}>
+
+                
+                {/* <Image className="mainImage" src={Picture2} fluid/> */}
+                
+                </Col>
+
+
+                <Col className="rightSide" sm={4} noGutters={true}>
+
+            
+            <Jumbotron className="jumbo" fluid={true} nogutters="true">
             <h1 className="mainHeader">RC Spots</h1>
             </Jumbotron>
-            <div className="">
+            
+            <div className="signIn">
                 <h2 className="loginTitle">Sign In</h2>
                 <form className="signInForm">
                     <fieldset>
                         <label>
-                            <p className="loginTitle">Email: </p>
+                            <p className="loginSmallTitle">Email: </p>
                             <input
                                 onChange={handleEmailInput}
                                 name="email" />
                         </label>
+                        <br />                        
                         <label>
-                            <p className="loginTitle">Password:</p>
+                            <p className="loginSmallTitle">Password:</p>
                             <input
                                 onChange={handlePasswordInput}
                                 name="password"
                                 type="password"
                             />
                         </label>
+                        <br />
                         <button
                             onClick={handleSignIn}
                             type="submit">Submit</button>
                     </fieldset>
                 </form>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <div>
                 <button onClick={(e) => {
                     e.preventDefault();
@@ -84,6 +117,9 @@ function SignIn(props) {
                     id="switchToSignUpBtn">Sign Up Here!
                     </button>
             </div>
+            </Col>
+            </Row>
+            {/* </Container> */}
         </div>
     )
 }

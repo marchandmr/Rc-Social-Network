@@ -38,22 +38,96 @@
 }
 
 body {
-  background-image: url("../src/assets/img/footer_lodyas.png");
+  background-image: url("../src/assets/img/bo_play_pattern.png");
 }
 
-
-.jumbo {
-  background-color: #003566 !important;
-  font-family: 'Racing Sans One', cursive;;
-  color: white !important;
+.leftSide {
+  background-image: url("../src/assets/img/carousel2.jpg");
+  /* background-size: cover; */
+  /* background-color: red; */
+  /* padding: 484px; */
+  background-size: cover;
+  /* height: 100% !important; */
   
 }
 
+
+.rightSide {
+  /* background-image: url("../src/assets/img/footer_lodyas.png"); */
+  background-image: url("../src/assets/img/bo_play_pattern.png");
+  /* background-size: cover; */
+  /* background-color: red; */
+  /* padding: 484px; */
+  /* background-size: cover; */
+  /* height: 100% !important; */
+  
+}
+
+
+/* Tablets */
+@media only screen and (min-width:576px){
+  .leftSide {
+    padding:768px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width:992px){
+  .leftSide {
+    padding:484px;
+  }
+}
+
+/* 
+.rowTest {
+  height: 100% !important;
+} */
+.jumbo {
+  background-color: #003566 !important;
+  font-family: 'Racing Sans One', cursive;;
+  color: white !important; 
+  
+}
+
+.mainImage {
+  /* display: block; */
+  /* margin-top: -500px; */
+  /* margin-bottom: -475px */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* width: 50%; */
+  
+}
+/* .jumbotron { */
+  /* background-color: #003566 !important; */
+  /* font-family: 'Racing Sans One', cursive;;
+  color: white !important;
+  font-size: 300px !important;
+} */
+
 .mainHeader {
-  color: white;  
+  /* color: white;   */
   font-size: 100px !important;
 }
 
 .loginTitle {
-  color: seashell;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.loginSmallTitle {
+  color: whitesmoke;
+  margin-bottom: 0px;
+  
+}
+
+.signIn {
+  /* background-image: url("../src/assets/img/bo_play_pattern.png"); */
+  background-image: url("../src/assets/img/footer_lodyas.png");
+  border-style: solid;
+  border-color: #ffd60a;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  color: white !important;
+
 }
