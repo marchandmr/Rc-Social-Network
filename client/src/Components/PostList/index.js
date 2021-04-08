@@ -11,11 +11,11 @@ export function PostList({ children }) {
     return (
 
         <div className="list-overflow-container" >
-            
+
             <ul className="list-group">
                 {children}
             </ul>
-            
+
         </div>
 
     )
@@ -34,26 +34,26 @@ export function ListItem(props) {
     return (
         <div>
             <li className="list-group-item">
-                
-                <Row>
-                    <Col>
-                    <img fluid className="itemImg" src={props.imageLink} alt="userimage"></img>
-                    
+                <Container fluid>
+                    <Row>
+                        <Col>
+                            <img fluid className="itemImg" src={props.imageLink} alt="userimage"></img>
 
-                    </Col>
-                    <Col className="postInfo">
-                       <p className="itemDate"><strong>Date: </strong> {processDate(props.date)}</p>
-                       <p className="itemCity"><strong>City: </strong>{props.city}</p>
-                       <p className="itemState"><strong>State: </strong>{props.state}</p>
-                       <p className="itemBody"><strong>Description: </strong>{props.body}</p>
-                       <h3><strong>Posted by: </strong>{props.user}</h3>
-                    </Col>
-                    
-                </Row>
-                
-                
+
+                        </Col>
+                        <Col className="postInfo">
+                            <p className="itemDate"><strong>Date: </strong> {processDate(props.date)}</p>
+                            <p className="itemCity"><strong>City: </strong>{props.city}</p>
+                            <p className="itemState"><strong>State: </strong>{props.state}</p>
+                            <p className="itemBody"><strong>Description: </strong>{props.body}</p>
+                            <h3><strong>Posted by: </strong>{props.user}</h3>
+                        </Col>
+
+                    </Row>
+                </Container  >
+
             </li>
-            
+
 
         </div>
     )
