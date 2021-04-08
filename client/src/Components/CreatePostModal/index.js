@@ -34,7 +34,7 @@ function CreatePostModal(props) {
             props.submitPost(formObject)
 
         } else{ //otherwise there is an image to upload
-            await Axios.post("/api/posts/image/", formdata)
+            API.createImage(formdata)
                 .then((res) => {
                     console.log("CLOUDINARY RESPONSE", String(res.data.image))
                     // get the cloudinary url link from res.data somewhere
