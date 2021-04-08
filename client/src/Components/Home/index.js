@@ -75,7 +75,7 @@ function Home() {
         postObject.image = localStorage.getItem("imageLink")
 
         console.log("POSTING WITH THIS INFORMATION: ", postObject)
-        
+
         // free up local storage
         localStorage.setItem("imageLink", "")
         if (verifyPostInputs(postObject)) {
@@ -85,6 +85,7 @@ function Home() {
             API.createPost(postObject)
                 .then(response => {
                     console.log("Response: ", response.data)
+                    updateLoadSwitch(!loadSwitch)
                 })
                 .catch(error => {
                     console.log("**** CREATE POST ERROR ****\n", error)
