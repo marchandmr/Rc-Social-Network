@@ -5,7 +5,8 @@ import CreatePostModal from "../CreatePostModal"
 import LogoutButton from "../LogoutButton"
 import { PostList, ListItem } from "../PostList"
 import Navbar from 'react-bootstrap/Navbar';
-
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container"
 
 
 const USERNAME = "currentUsername"
@@ -95,7 +96,7 @@ function Home() {
     return (
         <div>
             <Navbar bg="primary" variant="dark" fixed="top">
-            <Navbar.Brand href="#home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
+            <Navbar.Brand href="/Home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
@@ -131,16 +132,17 @@ function Home() {
             {/* <LogoutButton /> */}
             {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
             {/* <p>Your email is {localStorage.getItem("currentEmail")}</p> */}
-            <span className="fa-stack fa-lg">
+            <Link to="/Home"><span className="fa-stack fa-lg">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-home fa-stack-1x circleIcons"></i>
-                </span>
+                </span></Link>
             
             {
                 showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
             }
             <LogoutButton />
-            <h2>Post list goes under here</h2>
+            <h2>Feed</h2>
+            <Container>
             <PostList>
 
                 {
@@ -158,6 +160,7 @@ function Home() {
                         )
                     })}
             </PostList>
+            </Container>
             </div>
         </div>
     )
