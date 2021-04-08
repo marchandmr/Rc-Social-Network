@@ -46,7 +46,9 @@ export function ListItem(props) {
                        <p className="itemCity"><strong>City: </strong>{props.city}</p>
                        <p className="itemState"><strong>State: </strong>{props.state}</p>
                        <p className="itemBody"><strong>Description: </strong>{props.body}</p>
-                       <h3><strong>Posted by: </strong>{props.user}</h3>
+                    
+                       <h3 className="userPosted"><strong>Posted by: </strong>{props.user}</h3>
+                    
                     </Col>
                     
                 </Row>

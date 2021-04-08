@@ -39,7 +39,9 @@
 
 body {
   background-image: url("../src/assets/img/bo_play_pattern.png");
+  /* font-family: 'Lato', sans-serif; */
 }
+
 
 .leftSide {
   background-image: url("../src/assets/img/carousel2.jpg");
@@ -52,9 +54,18 @@ body {
 }
 
 .postInfo {
-  border: solid;
+  /* border: solid; */
   /* line-height: 100%; */
+  text-align: right;
+  
+  line-height: normal;
 }
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+
 
 .navTitle {
   font-family: 'Racing Sans One', cursive;;
@@ -71,7 +82,12 @@ body {
   
 }
 
+.userPosted {
+  text-align: right;
+  padding-top: 100px;
+  font-family: 'Lato', sans-serif;
 
+}
 /* Tablets */
 @media only screen and (min-width:576px){
   .leftSide {
