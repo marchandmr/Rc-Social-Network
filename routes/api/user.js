@@ -19,7 +19,6 @@ router.post('/signup', user.signup);
 
 // /api/user/login
 router.post('/login', passport.authenticate('local'), (req, res) => {
-    console.log("REQ:" + req)
     res.json({
         email: req.body.email
 

@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const postsController = require("../../controllers/postController");
-//const { UploadImage } = require("../../controllers/imageController");
 const parser = require("../../config/middleware/cloudinary.config");
 
 // Matches with "/api/posts/image"
