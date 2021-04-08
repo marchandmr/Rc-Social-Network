@@ -4,6 +4,10 @@ import CreatePostBtn from "../CreatePostBtn"
 import CreatePostModal from "../CreatePostModal"
 import LogoutButton from "../LogoutButton"
 import { PostList, ListItem } from "../PostList"
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container"
+
 
 const USERNAME = "currentUsername"
 const EMAIL = "currentEmail"
@@ -91,14 +95,54 @@ function Home() {
 
     return (
         <div>
-            <h1>RC Spots</h1>
-            <LogoutButton />
-            <p>Hello {localStorage.getItem("currentUsername")} </p>
-            <p>Your email is {localStorage.getItem("currentEmail")}</p>
+            <Navbar bg="primary" variant="dark" fixed="top">
+            <Navbar.Brand href="/Home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
+                <Navbar.Toggle />
+                <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text>
+                    Signed in as: <a href="#login">{localStorage.getItem("currentUsername")}</a>                  
+                </Navbar.Text>
+                </Navbar.Collapse>
+            </Navbar>
+            <div className="postPage">
+            <br />
+            <br />        
+                {/* <span className="fa-stack fa-lg">
+                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
+                    <i className="fas fa-home fa-stack-1x circleIcons"></i>
+                </span>
+             */}
+            
+                {/* <span className="fa-stack fa-lg">
+                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
+                    <i className="fas fa-pencil-alt fa-stack-1x circleIcons"></i>
+                </span>
+             */}
+                {/* <CreatePostBtn />
+                <LogoutButton /> */}
+                {/* <span className="fa-stack fa-lg">
+                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
+                    <i className="fas fa-door-open fa-stack-1x fa-inverse circleIcons"></i>
+                </span> */}
+                
+            <br />
+            
+            
+            {/* <h1>RC Spots</h1> */}
+            {/* <LogoutButton /> */}
+            {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
+            {/* <p>Your email is {localStorage.getItem("currentEmail")}</p> */}
+            <Link to="/Home"><span className="fa-stack fa-lg">
+                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
+                    <i className="fas fa-home fa-stack-1x circleIcons"></i>
+                </span></Link>
+            
             {
                 showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
             }
-            <h2>Post list goes under here</h2>
+            <LogoutButton />
+            <h2>Feed</h2>
+            <Container>
             <PostList>
 
                 {
@@ -116,6 +160,8 @@ function Home() {
                         )
                     })}
             </PostList>
+            </Container>
+            </div>
         </div>
     )
 }

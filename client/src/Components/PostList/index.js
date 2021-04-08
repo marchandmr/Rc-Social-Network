@@ -30,7 +30,7 @@ export function ListItem(props) {
         <div>
             <li className="list-group-item">
                 <h3>{props.user}</h3>
-                <img className="itemImg" src={props.imageLink}></img>
+                <img className="itemImg" src={props.imageLink} alt="userimage"></img>
                 <p className="itemDate">Date: {processDate(props.date)}</p>
                 <p className="itemCity">{props.city}</p>
                 <p className="itemState">{props.state}</p>

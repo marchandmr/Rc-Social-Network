@@ -3,6 +3,8 @@ import StateSelector from "../StateSelector"
 import "./style.css"
 import Axios from "axios";
 import CustomInput from "../ImageComponent/index";
+import Form from "react-bootstrap/Form"
+import API from "../../utils/API";
 
 function CreatePostModal(props) {
 
@@ -12,6 +14,7 @@ function CreatePostModal(props) {
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
     const [images, setFile] = useState("");
+    
 
     const handleFileChange = ({ target }) => {
         setFileData(target.files[0]);
@@ -52,7 +55,7 @@ function CreatePostModal(props) {
     }
 
     const {submitPost} = props
-
+    
     return(
     <div id="postModal" className="wrapper">
         <h2>Create a Post</h2>
@@ -63,6 +66,8 @@ function CreatePostModal(props) {
             <input type="text" placeholder="City" name="city"
             onChange={handleInputChange}
             />
+
+            {/* state selector tx-ks-ark */}
             <StateSelector handleInputChange={handleInputChange}/>
             {/* image uploader */}
             <CustomInput
@@ -89,7 +94,7 @@ function CreatePostModal(props) {
                 accept="image/*"
                 onChange={handleFileChange}
                 placeholder='upload image'
-                isRequired={true}
+                // isRequired={true}
             />
             <button>submit</button>
         </form> */}
