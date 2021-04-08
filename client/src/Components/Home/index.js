@@ -7,6 +7,7 @@ import { PostList, ListItem } from "../PostList"
 import Navbar from 'react-bootstrap/Navbar';
 
 
+
 const USERNAME = "currentUsername"
 const EMAIL = "currentEmail"
 
@@ -105,18 +106,19 @@ function Home() {
             <div className="postPage">
             <br />
             <br />        
-                <span className="fa-stack fa-lg">
+                {/* <span className="fa-stack fa-lg">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-home fa-stack-1x circleIcons"></i>
                 </span>
+             */}
             
-            
-                <span className="fa-stack fa-lg">
+                {/* <span className="fa-stack fa-lg">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-pencil-alt fa-stack-1x circleIcons"></i>
                 </span>
-            
-                <LogoutButton />
+             */}
+                {/* <CreatePostBtn />
+                <LogoutButton /> */}
                 {/* <span className="fa-stack fa-lg">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-door-open fa-stack-1x fa-inverse circleIcons"></i>
@@ -129,9 +131,15 @@ function Home() {
             {/* <LogoutButton /> */}
             {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
             {/* <p>Your email is {localStorage.getItem("currentEmail")}</p> */}
+            <span className="fa-stack fa-lg">
+                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
+                    <i className="fas fa-home fa-stack-1x circleIcons"></i>
+                </span>
+            
             {
                 showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
             }
+            <LogoutButton />
             <h2>Post list goes under here</h2>
             <PostList>
 
