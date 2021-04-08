@@ -1,14 +1,10 @@
 import React, { useState } from "react"
 import API from "../../utils/API"
 import Jumbotron from "react-bootstrap/Jumbotron"
-// import Jumbotron from "../Jumbotron/index";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Carousel from 'react-bootstrap/Carousel'
-import Picture1 from '../../assets/img/carousel1.jpg'
-import Picture2 from '../../assets/img/carousel2.jpg'
-import Image from 'react-bootstrap/Image'
+
 
 function SignIn(props) {
 
