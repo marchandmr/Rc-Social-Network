@@ -6,6 +6,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import Home from './Components/Home'
 import Error404 from './Components/Error404'
+import UserProfile from './Components/UserProfile';
 
 
 function App() {
@@ -26,11 +27,8 @@ function App() {
             )}
           />
           <Route exact path={"/SignUp"} component={SignUp} />
-
-        
-            <Route path={"/Home"} component={Home}/>
-         
-
+          <Route path={"/Home"} component={Home} />
+          <Route path={"/Profile"} component={UserProfile}/>
           <Route path={"*"} component={Error404} />
         </Switch>
       </Router>

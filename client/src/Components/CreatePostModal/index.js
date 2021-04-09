@@ -12,7 +12,6 @@ import Col from "react-bootstrap/Col";
 function CreatePostModal(props) {
 
     const[formObject, setFormObject] = useState({})
-    const[imageLink, setImageLink] = useState("")
 
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
@@ -24,8 +23,17 @@ function CreatePostModal(props) {
         setFile(target.value)
     };
 
+    function getPreciseLoc(){
+        // runs the geo code
+        // get the Lat Long
+        let lat = "33.0145599";
+        let long = "-96.5791382";
+        // http://maps.google.com/maps?q=33.0145599,-96.5791382
+        let preciseLocString = `http://maps.google.com/maps?q=${lat},${long}`
+        // add preciseLocString into formObject, or pass it as another param to post
+    }
+
     const handleSubmit = async () => {
-        // e.preventDefault();
 
         const formdata = new FormData();
 
@@ -38,12 +46,8 @@ function CreatePostModal(props) {
 
         } else{ //otherwise there is an image to upload
             API.createImage(formdata)
-                .then((res) => {
-                    console.log("CLOUDINARY RESPONSE", String(res.data.image))
-                    // get the cloudinary url link from res.data somewhere
-                    // add that data to Jason's form object state
+                .then((res) => {            
                     localStorage.setItem("imageLink", res.data.image)
-                    // call props.submitPost(formObject)
                     props.submitPost(formObject)
                 })
                 .catch((error) => console.error(error));
@@ -57,7 +61,7 @@ function CreatePostModal(props) {
         setFormObject({...formObject, [name]: value})
     }
 
-    const {submitPost} = props
+
     
     return(
     <div id="postModal" className="wrapper">
