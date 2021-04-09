@@ -35,6 +35,15 @@ export default {
             }
         });
     },
+
+    findByName: function (username) {
+        return axios.get("/api/user/username", {
+            params: {
+                username: username.username
+            }
+        });
+    },
+
     // Gets the post with the given id
     getUser: function (id) {
         return axios.get("/api/user/" + id);

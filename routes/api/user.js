@@ -6,6 +6,9 @@ const passport = require('../../config/passport');
 router.route("/find")
     .get(user.findOne)
 
+// find user by name /api/user/username
+router.route("/username")
+    .get(user.findByName)
 
 // Matches with "/api/user/:id"
 router
