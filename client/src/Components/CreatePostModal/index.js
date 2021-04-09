@@ -1,17 +1,21 @@
 import React, { useState } from "react"
 import StateSelector from "../StateSelector"
 import "./style.css"
-import Axios from "axios";
 import Form from "react-bootstrap/Form"
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+
+
+
 function CreatePostModal(props) {
 
     const[formObject, setFormObject] = useState({})
-    const[imageLink, setImageLink] = useState("")
+    // const[imageLink, setImageLink] = useState("")
+
+   
 
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
@@ -60,24 +64,31 @@ function CreatePostModal(props) {
     
     return(
     <div id="postModal" className="wrapper">
-        <h2>Create a Post</h2>
+        <h2>Create a Post</h2>  
         <Form>
-            <Container className="formArea">
-                <Row>                    
-            <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
-            onChange={handleInputChange}
-            />
-            
-           </Row>
-           <br />
+           <Container className="formArea">
+             <Form.Row>                    
+                <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
+                onChange={handleInputChange}/>
+             </Form.Row>
+            <br />
+            <Form.Row>
+            {/* <Form.Group as={Col} controlId="city" type="text" onChange={handleInputChange} name="city">
+                 <Form.Label>City</Form.Label>
+                 <Form.Control />
+                </Form.Group> */}
+
+
             <input type="text" placeholder="City" name="city"
             onChange={handleInputChange}
             />
            
             {/* state selector tx-ks-ark */}
-            <StateSelector handleInputChange={handleInputChange}/>
-           
 
+            <StateSelector handleInputChange={handleInputChange}/>
+            </Form.Row>
+
+            <Form.Row>
             {/* image uploader */}
             <Form.File
                 type='file'
@@ -88,26 +99,12 @@ function CreatePostModal(props) {
                 placeholder='upload image'
                 isRequired={true}
             />
+            </Form.Row>
             </Container>
         </Form>
-
-
-            {/* probably change this to oscars handle submit, not passing form object */}
             <button onClick={()=>handleSubmit()}>Submit</button>
 
 
-            {/* <form onSubmit={handleSubmit}>
-            <CustomInput
-                type='file'
-                value={images}
-                name='file'
-                accept="image/*"
-                onChange={handleFileChange}
-                placeholder='upload image'
-                // isRequired={true}
-            />
-            <button>submit</button>
-        </form> */}
 
 
     </div>    

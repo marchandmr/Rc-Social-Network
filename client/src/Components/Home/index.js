@@ -11,6 +11,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 
+
+
 const USERNAME = "currentUsername"
 const EMAIL = "currentEmail"
 
@@ -20,6 +22,8 @@ function Home() {
     const [postList, updatePostList] = useState([])
     const [showCreate, updateShowCreate] = useState(false)
     const [loadSwitch, updateLoadSwitch] = useState(false)
+
+    
 
     function loadUsername() {
         console.log("Loading username....")
@@ -118,8 +122,7 @@ function Home() {
             <Link to="/Home"><span className="fa-stack fa-lg">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-home fa-stack-1x circleIcons"></i>
-                </span></Link>
-            
+                </span></Link>            
             {
                 showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
             }
