@@ -11,28 +11,32 @@ import Col from "react-bootstrap/Col";
 
 function CreatePostModal(props) {
 
-    const[formObject, setFormObject] = useState({})
+    const [formObject, setFormObject] = useState({})
 
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
     const [images, setFile] = useState("");
-    
+
 
     const handleFileChange = ({ target }) => {
         setFileData(target.files[0]);
         setFile(target.value)
     };
 
-    function getPreciseLoc(){
-        // runs the geo code
-        // get the Lat Long
-        
-        let lat = "33.0145599";
-        let long = "-96.5791382";
-        // http://maps.google.com/maps?q=33.0145599,-96.5791382
-        let preciseLocString = `http://maps.google.com/maps?q=${lat},${long}`
-        // add preciseLocString into formObject, or pass it as another param to post
+    function getPreciseLoc() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+        function showPosition(position) {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+            let preciseLocString = `http://maps.google.com/maps?q=${lat},${long}`
+            console.log(preciseLocString);
+        }
     }
+
 
     const handleSubmit = async () => {
 
@@ -41,13 +45,13 @@ function CreatePostModal(props) {
         formdata.append('image', fileData);
 
         // if there is no image to upload, skip cloudinary
-        if(!fileData){
+        if (!fileData) {
             localStorage.setItem("imageLink", "")
             props.submitPost(formObject)
 
-        } else{ //otherwise there is an image to upload
+        } else { //otherwise there is an image to upload
             API.createImage(formdata)
-                .then((res) => {            
+                .then((res) => {
                     localStorage.setItem("imageLink", res.data.image)
                     props.submitPost(formObject)
                 })
@@ -58,48 +62,49 @@ function CreatePostModal(props) {
 
     //<---------------------------------------
     function handleInputChange(event) {
-        const {name, value} = event.target
-        setFormObject({...formObject, [name]: value})
+        const { name, value } = event.target
+        setFormObject({ ...formObject, [name]: value })
     }
 
 
-    
-    return(
-    <div id="postModal" className="wrapper">
-        <h2>Create a Post</h2>
-        <Form>
-            <Container className="formArea">
-                <Row>                    
-            <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
-            onChange={handleInputChange}
-            />
-            
-           </Row>
-           <br />
-            <input type="text" placeholder="City" name="city"
-            onChange={handleInputChange}
-            />
-           
-            {/* state selector tx-ks-ark */}
-            <StateSelector handleInputChange={handleInputChange}/>
-           
 
-            {/* image uploader */}
-            <Form.File
-                type='file'
-                value={images}
-                name='file'
-                accept="image/*"
-                onChange={handleFileChange}
-                placeholder='upload image'
-                isRequired={true}
-            />
-            </Container>
-        </Form>
+    return (
+        <div id="postModal" className="wrapper">
+            <h2>Create a Post</h2>
+            <Form>
+                <Container className="formArea">
+                    <Row>
+                        <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
+                            onChange={handleInputChange}
+                        />
+
+                    </Row>
+                    <br />
+                    <input type="text" placeholder="City" name="city"
+                        onChange={handleInputChange}
+                    />
+
+                    {/* state selector tx-ks-ark */}
+                    <StateSelector handleInputChange={handleInputChange} />
+
+
+                    {/* image uploader */}
+                    <Form.File
+                        type='file'
+                        value={images}
+                        name='file'
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        placeholder='upload image'
+                        isRequired={true}
+                    />
+                </Container>
+            </Form>
 
 
             {/* probably change this to oscars handle submit, not passing form object */}
-            <button onClick={()=>handleSubmit()}>Submit</button>
+            <button onClick={() => handleSubmit()}>Submit</button>
+            <button onClick={() => getPreciseLoc()}>share location</button>
 
 
             {/* <form onSubmit={handleSubmit}>
@@ -116,7 +121,7 @@ function CreatePostModal(props) {
         </form> */}
 
 
-    </div>    
+        </div>
     )
 }
 
