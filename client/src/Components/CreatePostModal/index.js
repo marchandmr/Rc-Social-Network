@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import StateSelector from "../StateSelector"
 import "./style.css"
 import Axios from "axios";
-import CustomInput from "../ImageComponent/index";
 import Form from "react-bootstrap/Form"
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container"
