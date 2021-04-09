@@ -68,22 +68,24 @@ function CreatePostModal(props) {
         <h2>Create a Post</h2>
         <Form>
             <Container className="formArea">
-                <Row>                    
+            <Form.Row>                    
             <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
             onChange={handleInputChange}
             />
             
-           </Row>
+           </Form.Row>
            <br />
+           <Form.Row>
             <input type="text" placeholder="City" name="city"
             onChange={handleInputChange}
             />
            
             {/* state selector tx-ks-ark */}
             <StateSelector handleInputChange={handleInputChange}/>
-           
+            </Form.Row>
 
             {/* image uploader */}
+            <Form.Row>
             <Form.File
                 type='file'
                 value={images}
@@ -93,6 +95,7 @@ function CreatePostModal(props) {
                 placeholder='upload image'
                 isRequired={true}
             />
+            </Form.Row>
             </Container>
         </Form>
 
