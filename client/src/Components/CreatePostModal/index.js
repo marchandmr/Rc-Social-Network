@@ -12,7 +12,6 @@ import Col from "react-bootstrap/Col";
 function CreatePostModal(props) {
 
     const[formObject, setFormObject] = useState({})
-    const[imageLink, setImageLink] = useState("")
 
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
@@ -25,7 +24,6 @@ function CreatePostModal(props) {
     };
 
     const handleSubmit = async () => {
-        // e.preventDefault();
 
         const formdata = new FormData();
 
@@ -38,12 +36,8 @@ function CreatePostModal(props) {
 
         } else{ //otherwise there is an image to upload
             API.createImage(formdata)
-                .then((res) => {
-                    console.log("CLOUDINARY RESPONSE", String(res.data.image))
-                    // get the cloudinary url link from res.data somewhere
-                    // add that data to Jason's form object state
+                .then((res) => {            
                     localStorage.setItem("imageLink", res.data.image)
-                    // call props.submitPost(formObject)
                     props.submitPost(formObject)
                 })
                 .catch((error) => console.error(error));
@@ -56,8 +50,6 @@ function CreatePostModal(props) {
         const {name, value} = event.target
         setFormObject({...formObject, [name]: value})
     }
-
-    const {submitPost} = props
     
     return(
     <div id="postModal" className="wrapper">
