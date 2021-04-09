@@ -3,8 +3,8 @@ import React from "react";
 function UserBody(){
     
     return(
-        <div>
-            <h1>Hello</h1>
+        <div className="userBodyContainer">
+            <h1>Take a Break</h1>
         </div>
     )
 }

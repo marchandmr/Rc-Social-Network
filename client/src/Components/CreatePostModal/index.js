@@ -23,6 +23,16 @@ function CreatePostModal(props) {
         setFile(target.value)
     };
 
+    function getPreciseLoc(){
+        // runs the geo code
+        // get the Lat Long
+        let lat = "33.0145599";
+        let long = "-96.5791382";
+        // http://maps.google.com/maps?q=33.0145599,-96.5791382
+        let preciseLocString = `http://maps.google.com/maps?q=${lat},${long}`
+        // add preciseLocString into formObject, or pass it as another param to post
+    }
+
     const handleSubmit = async () => {
 
         const formdata = new FormData();
@@ -50,6 +60,8 @@ function CreatePostModal(props) {
         const {name, value} = event.target
         setFormObject({...formObject, [name]: value})
     }
+
+
     
     return(
     <div id="postModal" className="wrapper">
