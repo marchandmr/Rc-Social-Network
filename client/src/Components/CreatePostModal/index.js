@@ -69,6 +69,8 @@ function CreatePostModal(props) {
 
     
     return(
+        <>
+        <Container>
     <div id="postModal" className="wrapper">
         <h2>Create a Post</h2>
         <Form>
@@ -80,7 +82,7 @@ function CreatePostModal(props) {
             
            </Form.Row>
            <br />
-           <Form.Row>
+           <Form.Row className="cityForm">
             <input type="text" placeholder="City" name="city"
             onChange={handleInputChange}
             />
@@ -92,13 +94,14 @@ function CreatePostModal(props) {
             {/* image uploader */}
             <Form.Row>
             <Form.File
+                className='fileUpload'
                 type='file'
                 value={images}
                 name='file'
                 accept="image/*"
                 onChange={handleFileChange}
                 placeholder='upload image'
-                isRequired={true}
+                // isRequired={true}
             />
             </Form.Row>
             </Container>
@@ -125,7 +128,10 @@ function CreatePostModal(props) {
 
 
         </div>
+        </Container>
+        </>
     )
+    
 }
 
 export default CreatePostModal

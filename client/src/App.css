@@ -79,9 +79,25 @@ p {
 }
 
 .circleIcons { 
- color: white 
+ color: white;
+ 
+ 
 }
 
+.cityForm {
+  float: right;
+  /* background-color: goldenrod; */
+  /* border: solid; */
+  /* border-width: 1px; */
+}
+
+.fileUpload {
+  /* border: solid; */
+  border-width: 1px;
+  float:left;
+  width: 94%;
+  /* background-color: black !important; */
+}
 .postPage {
   background-color: white;
   padding-top: 30px;
