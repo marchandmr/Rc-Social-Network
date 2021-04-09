@@ -26,6 +26,7 @@ function CreatePostModal(props) {
     function getPreciseLoc(){
         // runs the geo code
         // get the Lat Long
+        
         let lat = "33.0145599";
         let long = "-96.5791382";
         // http://maps.google.com/maps?q=33.0145599,-96.5791382
