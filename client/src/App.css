@@ -154,9 +154,8 @@ p {
 .signIn {  
   background-image: url("../src/assets/img/footer_lodyas.png");
   border-style: solid;
-  border-color: #ffd60a;
+  border-color: grey;
   padding-bottom: 25px;
   padding-top: 20px;
   color: white !important;
-
 }
