@@ -38,12 +38,20 @@ p {
   background-color: pink;
 } */
 
+.postWrapper {
+  border: 2px solid black;
+}
+
 .navTitle {
   font-family: 'Racing Sans One', cursive;;
   font-size: 29px !important;
 }
 .rightSide {
     background-image: url("../src/assets/img/bo_play_pattern.png");  
+}
+
+.submitBtn {
+  /* float: right; */
 }
 
 .userPosted {
@@ -79,9 +87,34 @@ p {
 }
 
 .circleIcons { 
- color: white 
+ color: white;
+ 
+ 
 }
 
+.cityForm {
+  float: right;
+  /* background-color: goldenrod; */
+  /* border: solid; */
+  /* border-width: 1px; */
+}
+
+.gobackBtn {
+  margin-right: 2px;
+}
+
+.locationBtn {
+  margin-right: 2px;
+}
+
+
+.fileUpload {
+  /* border: solid; */
+  border-width: 1px;
+  float:left;
+  width: 94%;
+  /* background-color: black !important; */
+}
 .postPage {
   background-color: white;
   padding-top: 30px;

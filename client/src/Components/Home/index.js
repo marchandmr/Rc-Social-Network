@@ -115,7 +115,7 @@ function Home() {
             {/* <LogoutButton /> */}
             {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
             {/* <p>Your email is {localStorage.getItem("currentEmail")}</p> */}
-            <Link to="/Home"><span className="fa-stack fa-lg">
+            <Link to="/Home"><span className="fa-stack fa-2x">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-home fa-stack-1x circleIcons"></i>
                 </span></Link>
@@ -123,10 +123,13 @@ function Home() {
             {
                 showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
             }
+            
             <LogoutButton />
+            
             {/* <Container fluid className="posts"> */}
+   
                 <Row className="postsHeader">
-                    <Col>
+                    <Col>                    
                     <h2>Feed</h2>
                     </Col>
                 </Row>
