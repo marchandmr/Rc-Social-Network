@@ -1,0 +1,27 @@
+h1
+{
+color: whitesmoke;
+}
+
+p{
+    color: whitesmoke;
+}
+
+h2{
+    color: whitesmoke;
+}
+
+.list-group-item
+{
+    background-color:#007bff; 
+}
+
+.container
+{
+  
+    background-image: url("../../../src/assets/img/footer_lodyas.png");
+    margin-top: 100px;
+    padding: 25px;
+    border: 1px solid gray;
+    
+}
