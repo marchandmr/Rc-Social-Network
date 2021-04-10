@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import StateSelector from "../StateSelector"
 import "./style.css"
-import Axios from "axios";
-import CustomInput from "../ImageComponent/index";
 import Form from "react-bootstrap/Form"
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button"
+import { Link } from "react-router-dom"
 
 function CreatePostModal(props) {
 
@@ -16,6 +16,8 @@ function CreatePostModal(props) {
     //Image Upload Code---------------------->
     const [fileData, setFileData] = useState();
     const [images, setFile] = useState("");
+
+    const [showCreate, updateShowCreate] = useState(false)
 
 
     const handleFileChange = ({ target }) => {
@@ -67,48 +69,34 @@ function CreatePostModal(props) {
     }
 
 
+    
+    return(
+        <>
+        <Container className="postWrapper">
+    <div id="postModal" className="wrapper">
+        <h2>Create a Post</h2>
+        <Form>
+            <Container className="formArea">
+            <Form.Row>                    
+            <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
+            onChange={handleInputChange}
+            />
+            
+           </Form.Row>
+           <br />
+           <Form.Row className="cityForm">
+            <input type="text" placeholder="City" name="city"
+            onChange={handleInputChange}
+            />
+           
+            {/* state selector tx-ks-ark */}
+            <StateSelector handleInputChange={handleInputChange}/>
+            </Form.Row>
 
-    return (
-        <div id="postModal" className="wrapper">
-            <h2>Create a Post</h2>
-            <Form>
-                <Container className="formArea">
-                    <Row>
-                        <Form.Control as="textarea" rows={4} placeholder="Description" name="body"
-                            onChange={handleInputChange}
-                        />
-
-                    </Row>
-                    <br />
-                    <input type="text" placeholder="City" name="city"
-                        onChange={handleInputChange}
-                    />
-
-                    {/* state selector tx-ks-ark */}
-                    <StateSelector handleInputChange={handleInputChange} />
-
-
-                    {/* image uploader */}
-                    <Form.File
-                        type='file'
-                        value={images}
-                        name='file'
-                        accept="image/*"
-                        onChange={handleFileChange}
-                        placeholder='upload image'
-                        isRequired={true}
-                    />
-                </Container>
-            </Form>
-
-
-            {/* probably change this to oscars handle submit, not passing form object */}
-            <button onClick={() => handleSubmit()}>Submit</button>
-            <button onClick={() => getPreciseLoc()}>share location</button>
-
-
-            {/* <form onSubmit={handleSubmit}>
-            <CustomInput
+            {/* image uploader */}
+            <Form.Row>
+            <Form.File
+                className='fileUpload'
                 type='file'
                 value={images}
                 name='file'
@@ -117,12 +105,21 @@ function CreatePostModal(props) {
                 placeholder='upload image'
                 // isRequired={true}
             />
-            <button>submit</button>
-        </form> */}
-
-
+            </Form.Row>
+            <br />
+            
+            <Link to="/Home"><Button className="gobackBtn" variant="danger" onClick={() => updateShowCreate(true)}><i className="fas fa-arrow-alt-circle-left fa-lg"></i> Go Back</Button></Link>
+            <Button className="locationBtn" variant="success" onClick={() => getPreciseLoc()}><i class="fas fa-location-arrow fa-lg"></i> Share Location</Button>
+            <Button className="submitBtn" onClick={() => handleSubmit()}><i class="fas fa-upload fa-lg"></i> Submit</Button>
+            
+            </Container>
+        </Form>
+        <br />
         </div>
+        </Container>
+        </>
     )
+    
 }
 
 export default CreatePostModal
