@@ -106,7 +106,7 @@ function Home() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        Signed in as: <a href="/Profile">{localStorage.getItem("currentUsername")}</a>
+                        Signed in as: <a href="">{localStorage.getItem("currentUsername")}</a>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>
