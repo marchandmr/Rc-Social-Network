@@ -18,7 +18,6 @@ function SignUp() {
 
     function handleSignUp(e) {
         e.preventDefault();
-        console.log("Submit!")
 
         if (email === "" || username === "" || password === "") {
             alert("Not all fields filled out, please check your inputs")

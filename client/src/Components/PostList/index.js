@@ -6,25 +6,19 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container"
 
 export function PostList({ children }) {
-
-
     return (
-
         <div className="list-overflow-container" >
-
             <ul className="list-group">
                 {children}
             </ul>
-
         </div>
-
     )
 }
 
 export function ListItem(props) {
 
     function checkLinkExists() {
-        if(props.exactlocation){
+        if (props.exactlocation) {
             // exists
             return <a href={props.exactlocation} target="_blank">Link</a>
         } else {
@@ -32,7 +26,6 @@ export function ListItem(props) {
             return <span>N/A</span>
         }
     }
-    console.log("MY PROPS: ", props)
 
     function processDate(date) {
         let m = moment(date, 'YYYY-MM-DD')
@@ -47,8 +40,6 @@ export function ListItem(props) {
                     <Row>
                         <Col>
                             <a href={props.imageLink}><img fluid className="itemImg" src={props.imageLink} alt="userimage"></img> </a>
-
-
                         </Col>
                         <Col className="postInfo">
                             <p className="itemDate"><strong>Date: </strong> {processDate(props.date)}</p>
@@ -58,13 +49,9 @@ export function ListItem(props) {
                             <p className="itemGeoLink"><strong>Map Location: </strong>{checkLinkExists()} </p>
                             <h3><strong>Posted by: </strong>{props.user}</h3>
                         </Col>
-
                     </Row>
                 </Container  >
-
             </li>
-
-
         </div>
     )
 }
