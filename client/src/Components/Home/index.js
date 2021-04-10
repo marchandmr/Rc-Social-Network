@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Footer from "../Footer";
 
 
 const USERNAME = "currentUsername"
@@ -163,6 +164,7 @@ function Home() {
                 {/* </Container> */}
 
             </div>
+            <Footer />
         </div>
     )
 }
