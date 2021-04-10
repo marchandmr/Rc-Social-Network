@@ -36,7 +36,7 @@ function Home() {
             .catch(e => {
                 console.log(e)
             })
-            
+
     }
 
     useEffect(() => {
@@ -62,8 +62,8 @@ function Home() {
     }
 
     function verifyPostInputs(post) {
-        if (!post.body || !post.city || !post.state) {
-            alert("Please fill out Description, City, and State.")
+        if (!post.body || !post.city || !post.state || !post.image) {
+            alert("Please fill out Description, City, State, and upload an image.")
             return false
         }
         return true
@@ -73,11 +73,14 @@ function Home() {
 
         postObject.user_posted = localStorage.getItem("currentUsername")
         postObject.image = localStorage.getItem("imageLink")
+        postObject.exactlocation = localStorage.getItem("geoLink")
 
         console.log("POSTING WITH THIS INFORMATION: ", postObject)
 
         // free up local storage
         localStorage.setItem("imageLink", "")
+        localStorage.setItem("geoLink", "")
+
         if (verifyPostInputs(postObject)) {
             // hide modal and bring button back
             updateShowCreate(false)
@@ -99,68 +102,67 @@ function Home() {
     return (
         <div>
             <Navbar bg="primary" variant="dark" fixed="top">
-            <Navbar.Brand href="/Home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
+                <Navbar.Brand href="/Home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text>
-                    Signed in as: <a href="/Profile">{localStorage.getItem("currentUsername")}</a>                  
-                </Navbar.Text>
+                    <Navbar.Text>
+                        Signed in as: <a href="/Profile">{localStorage.getItem("currentUsername")}</a>
+                    </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>
             <div className="postPage">
-            <br />
-            <br />         
-            <br />        
-            {/* <h1>RC Spots</h1> */}
-            {/* <LogoutButton /> */}
-            {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
-            {/* <p>Your email is {localStorage.getItem("currentEmail")}</p> */}
-            <Link to="/Home"><span className="fa-stack fa-2x">
+                <br />
+                <br />
+                <br />
+                {/* <h1>RC Spots</h1> */}
+                {/* <LogoutButton /> */}
+                {/* <p>Hello {localStorage.getItem("currentUsername")} </p> */}
+                {/* <p>Your email is {localStorage.getItem("currentEmail")}</p> */}
+
+                <Link to="/Home"><span className="fa-stack fa-2x">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i className="fas fa-home fa-stack-1x circleIcons"></i>
                 </span></Link>
-            
-            {
-                showCreate ? <CreatePostModal submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
-            }
-            
-            <LogoutButton />
-            
-            {/* <Container fluid className="posts"> */}
-   
+
+                <LogoutButton />
+                {
+                    showCreate ? <CreatePostModal updateShowCreate={updateShowCreate} submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
+                }
+                {/* <Container fluid className="posts"> */}
                 <Row className="postsHeader">
-                    <Col>                    
-                    <h2>Feed</h2>
+                    <Col>
+                        <h2>Feed</h2>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                    
-            {/* <h2>Feed</h2> */}
-            
-            <PostList>
 
-                {postList.map(post => {
-                        return (
-                            <ListItem
-                                key={post._id}
-                                user={post.user_posted}
-                                city={post.city}
-                                date={post.date}
-                                state={post.state}
-                                body={post.body}
-                                imageLink={post.image}
-                            />
-                        )
-                    })}
-            </PostList>
-            
-            </Col>
+                        {/* <h2>Feed</h2> */}
+
+                        <PostList>
+
+                            {postList.map(post => {
+                                return (
+                                    <ListItem
+                                        key={post._id}
+                                        user={post.user_posted}
+                                        city={post.city}
+                                        date={post.date}
+                                        state={post.state}
+                                        body={post.body}
+                                        imageLink={post.image}
+                                        exactlocation={post.exactlocation}
+                                    />
+                                )
+                            })}
+                        </PostList>
+
+                    </Col>
                 </Row>
 
 
-            {/* </Container> */}
-            
+                {/* </Container> */}
+
             </div>
         </div>
     )

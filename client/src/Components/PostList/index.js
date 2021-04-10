@@ -23,6 +23,15 @@ export function PostList({ children }) {
 
 export function ListItem(props) {
 
+    function checkLinkExists() {
+        if(props.exactlocation){
+            // exists
+            return <a href={props.exactlocation} target="_blank">Link</a>
+        } else {
+            // DNE
+            return <span>N/A</span>
+        }
+    }
     console.log("MY PROPS: ", props)
 
     function processDate(date) {
@@ -46,6 +55,7 @@ export function ListItem(props) {
                             <p className="itemCity"><strong>City: </strong>{props.city}</p>
                             <p className="itemState"><strong>State: </strong>{props.state}</p>
                             <p className="itemBody"><strong>Description: </strong>{props.body}</p>
+                            <p className="itemGeoLink"><strong>Map Location: </strong>{checkLinkExists()} </p>
                             <h3><strong>Posted by: </strong>{props.user}</h3>
                         </Col>
 

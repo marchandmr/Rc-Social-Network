@@ -17,9 +17,6 @@ function CreatePostModal(props) {
     const [fileData, setFileData] = useState();
     const [images, setFile] = useState("");
 
-    const [showCreate, updateShowCreate] = useState(false)
-
-
     const handleFileChange = ({ target }) => {
         setFileData(target.files[0]);
         setFile(target.value)
@@ -36,6 +33,7 @@ function CreatePostModal(props) {
             let long = position.coords.longitude;
             let preciseLocString = `http://maps.google.com/maps?q=${lat},${long}`
             console.log(preciseLocString);
+            localStorage.setItem("geoLink", preciseLocString)
         }
     }
 
@@ -108,9 +106,9 @@ function CreatePostModal(props) {
             </Form.Row>
             <br />
             
-            <Link to="/Home"><Button className="gobackBtn" variant="danger" onClick={() => updateShowCreate(true)}><i className="fas fa-arrow-alt-circle-left fa-lg"></i> Go Back</Button></Link>
-            <Button className="locationBtn" variant="success" onClick={() => getPreciseLoc()}><i class="fas fa-location-arrow fa-lg"></i> Share Location</Button>
-            <Button className="submitBtn" onClick={() => handleSubmit()}><i class="fas fa-upload fa-lg"></i> Submit</Button>
+            <Link to="/Home"><Button className="gobackBtn" variant="danger" onClick={() => props.updateShowCreate(false)}><i className="fas fa-arrow-alt-circle-left fa-lg"></i> Go Back</Button></Link>
+            <Button className="locationBtn" variant="success" onClick={() => getPreciseLoc()}><i className="fas fa-location-arrow fa-lg"></i> Share Location</Button>
+            <Button className="submitBtn" onClick={() => handleSubmit()}><i className="fas fa-upload fa-lg"></i> Submit</Button>
             
             </Container>
         </Form>
