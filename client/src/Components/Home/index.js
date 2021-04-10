@@ -20,6 +20,7 @@ function Home() {
     const [postList, updatePostList] = useState([])
     const [showCreate, updateShowCreate] = useState(false)
     const [loadSwitch, updateLoadSwitch] = useState(false)
+    const [user, updateUser] = useState("")
 
     function loadUsername() {
 
@@ -29,6 +30,7 @@ function Home() {
             .then(res => {
                
                 localStorage.setItem(USERNAME, res.data)
+                updateUser(res.data)
                 updateLoadSwitch(!loadSwitch)
             })
             .catch(e => {
@@ -52,6 +54,10 @@ function Home() {
 
     function handleCreatePost() {
         // make the modal appear
+        if(user === ""){
+            alert("You must be signed in to create a post")
+            return
+        }
         updateShowCreate(true)
 
     }
