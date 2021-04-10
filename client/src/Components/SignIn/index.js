@@ -64,15 +64,15 @@ function SignIn(props) {
                     <Jumbotron className="jumbo" fluid={true} nogutters="true">
 
                         <h1 className="mainHeader">RC Spots</h1>
-                        <Anime 
-                        easing="linear"
+                        <Anime
+                            easing="linear"
                             duration={1800}
-                            
+
                             loop={true}
                             rotate={1100}
-                            >
+                        >
 
-                               <img width="150px" src="./tire.png"/>
+                            <img width="150px" src="./tire.png" />
                         </Anime>
                     </Jumbotron>
 
