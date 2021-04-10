@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import API from "../../utils/API"
 import Jumbotron from "react-bootstrap/Jumbotron"
-import Container from "react-bootstrap/Container"
+import Anime from "react-anime"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
@@ -31,10 +31,6 @@ function SignIn(props) {
             return
         }
 
-        // send information to server with passport and switch 
-        // somehow with userid data?
-        // dont forget to add username from login response
-
         API.login(email, password)
             .then(response => {
                 if (response.status === 200) {
@@ -58,10 +54,7 @@ function SignIn(props) {
             <Row className="RowTest" noGutters={true}>
 
                 <Col className="leftSide" sm={8} noGutters={true}>
-
-
                     {/* <Image className="mainImage" src={Picture2} fluid/> */}
-
                 </Col>
 
 
@@ -69,7 +62,18 @@ function SignIn(props) {
 
 
                     <Jumbotron className="jumbo" fluid={true} nogutters="true">
+
                         <h1 className="mainHeader">RC Spots</h1>
+                        <Anime 
+                        easing="linear"
+                            duration={1800}
+                            
+                            loop={true}
+                            rotate={1100}
+                            >
+
+                               <img width="150px" src="./tire.png"/>
+                        </Anime>
                     </Jumbotron>
 
                     <div className="signIn">
@@ -109,16 +113,9 @@ function SignIn(props) {
                     <br />
                     <br />
                     <div>
-                        {/* <button onClick={(e) => {
-                            e.preventDefault();
-                            window.location.href = "/SignUp"
-                        }}
-                            id="switchToSignUpBtn">Sign Up Here!
-                    </button> */}
                     </div>
                 </Col>
             </Row>
-            {/* </Container> */}
         </div>
     )
 }
