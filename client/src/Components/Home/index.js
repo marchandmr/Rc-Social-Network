@@ -121,7 +121,7 @@ function Home() {
 
                 <Link to="/Home"><span className="fa-stack fa-2x">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
-                    <i className="fas fa-home fa-stack-1x circleIcons"></i>
+                    <i onClick={() => window.location.reload()} className="fas fa-home fa-stack-1x circleIcons"></i>
                 </span></Link>
 
                 <LogoutButton />
