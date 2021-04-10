@@ -1,5 +1,14 @@
 import React, { useState } from "react"
 import API from "../../utils/API"
+import "./signup.css"
+import SignupJumbotron from "../SignupJumbotron"
+import Footer from "../Footer";
+import ListGroup from "react-bootstrap/ListGroup"
+import Card from "react-bootstrap/Card"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
 function SignUp() {
 
@@ -15,15 +24,15 @@ function SignUp() {
             alert("Not all fields filled out, please check your inputs")
             return
         }
-      
+
         API.signup({
             username: username,
             email: email,
             password: password
         }).then(response => {
-            if(response.data){
+            if (response.data) {
                 alert("Sign Up Successful")
-                window.location.href="/"
+                window.location.href = "/"
             }
         }).catch(error => {
             console.log("Error: ", error)
@@ -45,38 +54,55 @@ function SignUp() {
 
     return (
         <div>
-            <h1>RC Spots</h1>
-            <div className="">
-                <h2>Sign Up</h2>
-                <form className="signInForm">
-                    <fieldset>
-                        <label>
-                            <p>Username: </p>
-                            <input
-                                onChange={handleUsernameInput}
-                                name="username" />
-                        </label>
-                        <label>
-                            <p>Email: </p>
-                            <input
-                                onChange={handleEmailInput}
-                                name="email" />
-                        </label>
-                        <label>
-                            <p>Password:</p>
-                            <input
-                                onChange={handlePasswordInput}
-                                name="password"
-                                type="password"
-                            />
-                        </label>
-                    </fieldset>
-                </form>
-            </div>
-            <div>
-                <button
-                    onClick={handleSignUp}>Submit</button>
-            </div>
+            <SignupJumbotron />
+            <Container>
+
+
+                <div className="">
+                    <h2>Sign Up</h2>
+                    <form className="signInForm">
+
+                        <fieldset>
+                            <Row>
+                                <Col>
+                                    <label>
+                                        <p>Username: </p>
+                                        <input
+                                            onChange={handleUsernameInput}
+                                            name="username" />
+                                    </label>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <label>
+                                        <p>Email: </p>
+                                        <input
+                                            onChange={handleEmailInput}
+                                            name="email" />
+                                    </label>
+                                </Col>
+                            </Row>
+                            <label>
+                                <p>Password:</p>
+                                <input
+                                    onChange={handlePasswordInput}
+                                    name="password"
+                                    type="password"
+                                />
+                            </label>
+                        </fieldset>
+                    </form>
+                </div>
+                <div>
+                    <Button
+                        onClick={handleSignUp}>Submit</Button>
+                    <br>
+                    </br>
+                    <a href="/">Already have an account?</a>
+                </div>
+            </Container>
+            <Footer />
         </div>
     )
 }
