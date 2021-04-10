@@ -4,6 +4,7 @@ import Jumbotron from "react-bootstrap/Jumbotron"
 import Anime from "react-anime"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
 
 function SignIn(props) {
@@ -75,9 +76,9 @@ function SignIn(props) {
                                     />
                                 </label>
                                 <br />
-                                <button
+                                <Button                                
                                     onClick={handleSignIn}
-                                    type="submit">Submit</button>
+                                    type="submit">Submit</Button>
                                 <br></br>
                                 <br></br>
                                 <a href="/SignUp">Sign up Here!</a>
