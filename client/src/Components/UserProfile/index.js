@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Navbar from 'react-bootstrap/Navbar';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import API from "../../utils/API";
@@ -6,12 +6,15 @@ import UserBody from "../UserBody";
 
 function UserProfile() {
 
+    const [userInfo, updateUserInfo] = useState({})
+
     useEffect(() => {
 
 
         API.findByName({ username: localStorage.getItem("currentUsername") })
             .then((res) => {
                 console.log("Data: ", res.data)
+                updateUserInfo(userInfo)
             })
             .catch((error) => {
                 console.log("Error: ", error)
@@ -33,7 +36,7 @@ function UserProfile() {
             <br />
             <br />
             <Jumbotron>
-            <UserBody />
+            <UserBody user={userInfo}/>
             </Jumbotron>
         </div>
     )
