@@ -115,27 +115,6 @@ function CreatePostModal(props) {
             </Container>
         </Form>
         <br />
-        
-
-            {/* probably change this to oscars handle submit, not passing form object */}
-            {/* <Button className="submitBtn" onClick={() => handleSubmit()}>Submit</Button> */}
-           
-
-
-            {/* <form onSubmit={handleSubmit}>
-            <CustomInput
-                type='file'
-                value={images}
-                name='file'
-                accept="image/*"
-                onChange={handleFileChange}
-                placeholder='upload image'
-                // isRequired={true}
-            />
-            <button>submit</button>
-        </form> */}
-
-
         </div>
         </Container>
         </>
