@@ -28,6 +28,7 @@ function App() {
             )}
           />
           <Route exact path={"/SignUp"} component={SignUp} />
+
           <Route path={"/Home"} component={Home} />
           <Route path={"/Profile"} component={UserProfile} />
           <Route path={"*"} component={Error404} />

@@ -54,18 +54,18 @@ function SignUp() {
     return (
         <div>
             <SignupJumbotron />
-            <Container>
+            <Container className="signupContainer">
 
 
                 <div className="">
-                    <h2>Sign Up</h2>
+                    <h2 className="signup">Sign Up</h2>
                     <form className="signInForm">
 
                         <fieldset>
                             <Row>
                                 <Col>
                                     <label>
-                                        <p>Username: </p>
+                                        <p className="signup">Username: </p>
                                         <input
                                             onChange={handleUsernameInput}
                                             name="username" />
@@ -75,7 +75,7 @@ function SignUp() {
                             <Row>
                                 <Col>
                                     <label>
-                                        <p>Email: </p>
+                                        <p className="signup">Email: </p>
                                         <input
                                             onChange={handleEmailInput}
                                             name="email" />
@@ -83,7 +83,7 @@ function SignUp() {
                                 </Col>
                             </Row>
                             <label>
-                                <p>Password:</p>
+                                <p className="signup">Password:</p>
                                 <input
                                     onChange={handlePasswordInput}
                                     name="password"
