@@ -10,6 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../Footer";
 import Masthead from "../Masthead/index"
+import Container from "react-bootstrap/Container"
 
 
 const USERNAME = "currentUsername"
@@ -101,8 +102,8 @@ function Home() {
     }
 
     return (
-        <div>
-            <Navbar bg="primary" variant="dark" fixed="top">
+        <div className="homePage">
+            <Navbar className="navBar" variant="dark" fixed="top">
                 <Navbar.Brand href="/Home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
@@ -113,15 +114,20 @@ function Home() {
                 </Navbar.Collapse>
             </Navbar>
             <Masthead />
+            {/* <Container classname="welcomeContainer">
+            <Row className="welcomeHeader">
+                <Col>
+                <h4>WELCOME to RC SPOTS</h4>
+                <p>This site is designed for users to post descriptions, locations, and images of
+                    RC events or spots with fun terrain to use their radio controlled cars.
+                </Col>
+            </Row>
+            </Container> */}
             <div className="postPage">
-                <br />
-                <br />
-                <br />
-
-                <Link to="/Home"><span className="fa-stack fa-2x">
+                {/* <Link to="/Home"><span className="fa-stack fa-2x">
                     <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
                     <i onClick={() => window.location.reload()} className="fas fa-home fa-stack-1x circleIcons"></i>
-                </span></Link>
+                </span></Link> */}
 
                 {/* <LogoutButton /> */}
                 {

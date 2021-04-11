@@ -6,15 +6,6 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body {
   background-image: url("../src/assets/img/bo_play_pattern.png");
 }
@@ -34,12 +25,10 @@ p {
   font-family: 'Lato', sans-serif;
 }
 
-/* .formArea{
-  background-color: pink;
-} */
-
 .postWrapper {
   border: 2px solid black;
+  background-color: white;
+  
 }
 
 .navTitle {
@@ -50,81 +39,38 @@ p {
     background-image: url("../src/assets/img/bo_play_pattern.png");  
 }
 
-.submitBtn {
-  /* float: right; */
-}
-
 .userPosted {
   text-align: right;
   padding-top: 100px;
   font-family: 'Lato', sans-serif;
-  /* line-height: 20px; */
 }
-
-/* Tablets */
-@media only screen and (min-width:576px){
-  .leftSide {
-    padding:768px;
-  }
-}
-
-/* Tablets */
-@media only screen and (min-width:992px){
-  .leftSide {
-    padding:484px;
-  }
-}
-
-.jumbo {
-  /* background-color: #003566 !important; */
-  /* font-family: 'Racing Sans One', cursive;; */
-  /* color: white !important;  */
-  /* background-image: url("../src/assets/img/logtest1.png"); */
-  /* height: 50%; */
-  /* background-size: cover;   */
-  
-}
-
-.rowTest {
-  /* overflow: hidden; */
-  
-}
-
-/* .example::-webkit-scrollbar {
-  display: none;
-} */
-
 
 .list-overflow-container{
   border: none;
 }
 
+
 .circleIcons { 
  color:white; 
 }
 
-.backgroundIcons {
-  color: #f77f00;
-}
-
-.logoutCircle:hover {
-  color: red;
-  /* background-color: red; */
+.circleIcons:hover {
+  color: black;
   transition: color .5s;
 }
 
-/* .logoutBkgndCircle:hover {
-     background-color: red;
-     transition: background-color .5s;
-  } */
+.backgroundIcons {
+  color: blue;
+}
 
+.logoutCircle:hover {
+  color: red;  
+  transition: color .5s;
+}
 .feedTitle{
   text-decoration: underline;
   color: white;
   background-color: #f77f00;
-  /* width: 50%; */
-  /* padding-left: 100px; */
-  /* padding-right: 100px; */
   margin-top: 10px;
   margin-left: 100px;
   margin-right: 100px;
@@ -132,19 +78,8 @@ p {
   border: solid;
 }
 
-/* .postsHeader {
-  color: white;
-} */
-
-/* .feedCol {
-  color: black;
-} */
-
 .cityForm {
-  float: right;
-  /* background-color: goldenrod; */
-  /* border: solid; */
-  /* border-width: 1px; */
+  float: right;  
 }
 
 .gobackBtn {
@@ -155,40 +90,39 @@ p {
   margin-right: 2px;
 }
 
-
-.fileUpload {
-  /* border: solid; */
+.fileUpload {  
   border-width: 1px;
   float:left;
-  width: 94%;
-  /* background-color: black !important; */
+  width: 94%;  
 }
+
 .postPage {
   background-color: #001d3d;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 30px;
 }
 
+.navBar {
+  background-color: #161a1d;
+}
 
 .userNav {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
 }
-.mainImage {
-  /* display: block; */
-  /* margin-top: -500px; */
-  /* margin-bottom: -475px */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  /* width: 50%; */
-  
+
+.homePage{
+  background-color:#001d3d;
 }
-/* .jumbotron { */
-  /* background-color: #003566 !important; */
-  /* font-family: 'Racing Sans One', cursive;;
-  color: white !important;
-  font-size: 300px !important;
-} */
+
+.welcomeHeader {
+  background-color: white;  
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  border: solid;
+}
 
 .mainHeader {  
   font-size: 100px !important;
@@ -210,8 +144,7 @@ p {
 .signIn {  
   background-image: url("../src/assets/img/footer_lodyas.png");
   border-style: solid;
-  border-color: grey;
-  
+  border-color: grey;  
   padding-bottom: 25px;
   padding-top: 20px;
   color: white !important;
@@ -242,6 +175,20 @@ header.masthead .masthead-heading {
   line-height: 3.25rem;
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Tablets */
+@media only screen and (min-width:576px){
+  .leftSide {
+    padding:768px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width:992px){
+  .leftSide {
+    padding:484px;
+  }
 }
 
 @media (min-width: 768px) {
