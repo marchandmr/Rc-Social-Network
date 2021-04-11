@@ -42,3 +42,7 @@ button:active {
 	background: none;
 }
 
+/* .example::-webkit-scrollbar {
+	display: none;
+  }
+   */

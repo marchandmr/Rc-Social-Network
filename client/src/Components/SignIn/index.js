@@ -5,6 +5,8 @@ import Anime from "react-anime"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
+import Logo from "../../assets/img/logtest4.png"
+import { Link } from "react-router-dom"
 
 
 function SignIn(props) {
@@ -46,17 +48,28 @@ function SignIn(props) {
             <Row className="RowTest" noGutters={true}>
                 <Col className="leftSide" sm={8} noGutters={true}> </Col>
                 <Col className="rightSide" sm={4} noGutters={true}>
-                    <Jumbotron className="jumbo" fluid={true} nogutters="true">
-                        <h1 className="mainHeader">RC Spots</h1>
-                        <Anime
+                    {/* <Jumbotron className="jumbo" fluid={true} nogutters="true"> */}
+                        {/* <h1 className="mainHeader"></h1> */}
+                        <img src={Logo} class="img-fluid" alt="logo"></img>
+                        {/* <Anime
                             easing="linear"
                             duration={1800}
                             loop={true}
                             rotate={1100} >
                             <img width="150px" src="./tire.png" />
-                        </Anime>
-                    </Jumbotron>
+                        </Anime> */}
+                        
+                        {/* <h1 className="mainHeader"></h1> */}
+                        
+                    {/* </Jumbotron> */}
                     <div className="signIn">
+                    <Anime
+                            easing="linear"
+                            duration={1800}
+                            loop={true}
+                            rotate={1100} >
+                            <img width="130px" src="./tire.png" alt="rotating tire"/>
+                        </Anime>
                         <h2 className="loginTitle">Sign In</h2>
                         <form className="signInForm">
                             <fieldset>
@@ -76,22 +89,18 @@ function SignIn(props) {
                                     />
                                 </label>
                                 <br />
-                                <Button                                
+                                <Button
+                                    // size="lg"                                
                                     onClick={handleSignIn}
                                     type="submit">Submit</Button>
                                 <br></br>
                                 <br></br>
+
+                                {/* <Link to ="/SignUp"><Button variant="success" block>Sign up Here</Button></Link> */}
                                 <a href="/SignUp">Sign up Here!</a>
                             </fieldset>
                         </form>
                     </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <div>
                     </div>
                 </Col>

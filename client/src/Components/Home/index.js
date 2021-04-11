@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../Footer";
+import Masthead from "../Masthead/index"
 
 
 const USERNAME = "currentUsername"
@@ -105,11 +106,13 @@ function Home() {
                 <Navbar.Brand href="/Home" className="navTitle"><i className="fas fa-truck-pickup"></i>  RC Spots</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                    <Navbar.Text>
+                    <Navbar.Text className="userNav">
                         Signed in as: <a href="">{localStorage.getItem("currentUsername")}</a>
                     </Navbar.Text>
+                    <LogoutButton />
                 </Navbar.Collapse>
             </Navbar>
+            <Masthead />
             <div className="postPage">
                 <br />
                 <br />
@@ -120,13 +123,13 @@ function Home() {
                     <i onClick={() => window.location.reload()} className="fas fa-home fa-stack-1x circleIcons"></i>
                 </span></Link>
 
-                <LogoutButton />
+                {/* <LogoutButton /> */}
                 {
                     showCreate ? <CreatePostModal updateShowCreate={updateShowCreate} submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
                 }
                 <Row className="postsHeader">
-                    <Col>
-                        <h2>Feed</h2>
+                    <Col className="feedCol">
+                        <h2 className="feedTitle">Posts</h2>
                     </Col>
                 </Row>
                 <Row>
