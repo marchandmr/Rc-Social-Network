@@ -22,13 +22,6 @@
   hr {
     margin-right: 20px;
   }
-  
-  .itemImg {
-   /* float: left; */
-   /* margin-bottom: 15px;  */
-   max-width: 100%;
-   height: auto;
-  }
 
   html, body{
     margin: 0;
@@ -36,21 +29,19 @@
     overflow-x: hidden;
   }
 
-
   @media only screen and (min-width:360px){
-    .list-overflow-container {
-      /* max-height: 800px; */
-      /* min-height: 200px; */
-      /* border: 1px #DDDDDD solid; */
-      /* border-radius: 4px; */
+    .list-overflow-container {    
       overflow-y: scroll;
       overflow-x: hidden;
       text-align: center;
       margin-left: 10px;
       margin-right: 10px;
-      /* margin-bottom: 0px; */
-      float: none;
-    }
+    } 
+     .imgContainer{
+       display: flex;
+       justify-content: center;  
+       max-width: 50%;
+     }
   }
 
   @media (min-width: 768px) {
@@ -60,6 +51,13 @@
     }
     .itemImg {
       float: left;
+      margin-bottom: 15px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .imgContainer {
+      display: inline;
     }
 
   }

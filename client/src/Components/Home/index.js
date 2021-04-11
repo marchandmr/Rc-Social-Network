@@ -5,12 +5,10 @@ import CreatePostModal from "../CreatePostModal"
 import LogoutButton from "../LogoutButton"
 import { PostList, ListItem } from "../PostList"
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../Footer";
 import Masthead from "../Masthead/index"
-import Container from "react-bootstrap/Container"
 
 
 const USERNAME = "currentUsername"
@@ -123,13 +121,7 @@ function Home() {
                 </Col>
             </Row>
             </Container> */}
-            <div className="postPage">
-                {/* <Link to="/Home"><span className="fa-stack fa-2x">
-                    <i className="fas fa-circle fa-stack-2x backgroundIcons"></i>
-                    <i onClick={() => window.location.reload()} className="fas fa-home fa-stack-1x circleIcons"></i>
-                </span></Link> */}
-
-                {/* <LogoutButton /> */}
+            <div className="postPage">      
                 {
                     showCreate ? <CreatePostModal updateShowCreate={updateShowCreate} submitPost={handleSubmitPost} /> : <CreatePostBtn handleCreatePost={handleCreatePost} />
                 }
