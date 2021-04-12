@@ -67,6 +67,7 @@ p {
   color: red;  
   transition: color .5s;
 }
+
 .feedTitle{
   text-decoration: underline;
   color: white;
@@ -80,14 +81,6 @@ p {
 
 .cityForm {
   float: right;  
-}
-
-.gobackBtn {
-  margin-right: 2px;
-}
-
-.locationBtn {
-  margin-right: 2px;
 }
 
 .fileUpload {  
@@ -168,7 +161,7 @@ header.masthead {
 @media only screen and (min-width:576px){
   .leftSide {
     padding:768px;
-  }
+  }  
 }
 
 /* Tablets */
@@ -193,8 +186,7 @@ header.masthead {
       font-size: 14px;     
     }
     .navbar-text {
-      padding-right: 5px;
-      
+      padding-right: 5px;      
     }
     .logoutStack {
       margin-right: -28px;     
@@ -210,13 +202,21 @@ header.masthead {
     }
     .cityFormInput{
       width: 100%;
-
     }
     .stateForm{
       margin-top: 10px;
+      width: 100%;  
+    }
+    .gobackBtn {      
       width: 100%;
-      
-      
+      margin-bottom: 5px;
+    }    
+    .locationBtn {      
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .submitBtn{
+      width: 100%;  
     }
 }
 
@@ -249,6 +249,19 @@ header.masthead {
   .stateForm{
     margin-top: 0px;    
     width: 50%;
+  }
+  .gobackBtn {
+    margin-right: 2px;
+    width: 15%;
+    margin-bottom: 0px;
+  }  
+  .locationBtn {
+    margin-right: 2px;
+    width: 15%;
+    margin-bottom: 0px;
+  }
+  .submitBtn{
+    width: 15%;  
   }
 }
  
