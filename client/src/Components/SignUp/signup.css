@@ -13,6 +13,7 @@
 {
     background-image: url("../../../src/assets/img/footer_lodyas.png");
     margin-top: 100px;
+    margin-bottom: 100px;
     padding: 25px;
     border: 1px solid gray;
 }
