@@ -3,7 +3,7 @@ import React from "react"
 function StateSelector(props) {
 
     return (
-        <select onChange={props.handleInputChange} name="state">
+        <select className="stateForm" onChange={props.handleInputChange} name="state">
             <option value="">-Select a State-</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>

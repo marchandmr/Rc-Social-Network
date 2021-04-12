@@ -4,10 +4,9 @@ import "./style.css"
 import Form from "react-bootstrap/Form"
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button"
 import { Link } from "react-router-dom"
+
 
 function CreatePostModal(props) {
 
@@ -73,7 +72,7 @@ function CreatePostModal(props) {
                             </Form.Row>
                             <br />
                             <Form.Row className="cityForm">
-                                <input type="text" placeholder="City" name="city"
+                                <input className="cityFormInput" type="text" placeholder="City" name="city"
                                     onChange={handleInputChange}
                                 />
                                 {/* state selector tx-ks-ark */}

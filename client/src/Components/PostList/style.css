@@ -10,23 +10,17 @@
   }
 
   ul {
-    list-style-type: none;
+    list-style-type: none;  
 
   }
 
   li, hr {
     clear: both;
+    
   }
 
   hr {
     margin-right: 20px;
-  }
-  
-  .itemImg {
-   float: left;
-   margin-bottom: 15px; 
-   max-width: 100%;
-   height: auto;
   }
 
   html, body{
@@ -35,4 +29,36 @@
     overflow-x: hidden;
   }
 
+  @media only screen and (min-width:360px){
+    .list-overflow-container {    
+      overflow-y: scroll;
+      overflow-x: hidden;
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 10px;
+    } 
+     .imgContainer{
+       display: flex;
+       justify-content: center;  
+       max-width: 50%;
+     }
+  }
+
+  @media (min-width: 768px) {
+    .list-overflow-container {     
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+    .itemImg {
+      float: left;
+      margin-bottom: 15px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .imgContainer {
+      display: inline;
+    }
+
+  }
   
