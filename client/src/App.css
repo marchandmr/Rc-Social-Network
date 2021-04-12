@@ -205,6 +205,19 @@ header.masthead {
     .logoutBkgndCircle {
       margin-left: -10px;
     }
+    .cityForm {
+      margin-bottom: 10px;     
+    }
+    .cityFormInput{
+      width: 100%;
+
+    }
+    .stateForm{
+      margin-top: 10px;
+      width: 100%;
+      
+      
+    }
 }
 
 @media (min-width: 768px) {
@@ -226,6 +239,16 @@ header.masthead {
   }
   .logoutStack {
     margin-right: 0px;     
+  }
+  .cityForm {
+    margin-bottom: 0px;
+  }
+  .cityFormInput{
+    width: 50%;
+  }
+  .stateForm{
+    margin-top: 0px;    
+    width: 50%;
   }
 }
  

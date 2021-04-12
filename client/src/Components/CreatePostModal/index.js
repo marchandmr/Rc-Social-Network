@@ -71,7 +71,7 @@ function CreatePostModal(props) {
                             </Form.Row>
                             <br />
                             <Form.Row className="cityForm">
-                                <input type="text" placeholder="City" name="city"
+                                <input className="cityFormInput" type="text" placeholder="City" name="city"
                                     onChange={handleInputChange}
                                 />
                                 {/* state selector tx-ks-ark */}
