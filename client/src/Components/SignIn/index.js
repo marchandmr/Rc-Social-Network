@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import API from "../../utils/API"
-import Jumbotron from "react-bootstrap/Jumbotron"
 import Anime from "react-anime"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 import Logo from "../../assets/img/logtest4.png"
-import { Link } from "react-router-dom"
 
 
 function SignIn(props) {
