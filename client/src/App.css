@@ -138,7 +138,7 @@ p {
   background-image: url("../src/assets/img/footer_lodyas.png");
   border-style: solid;
   border-color: grey;  
-  padding-bottom: 25px;
+  padding-bottom: 75px;
   padding-top: 20px;
   color: white !important;
 }
@@ -156,6 +156,12 @@ header.masthead {
   background-size: cover;
 }
 
+@media only screen and (min-width:2000px){
+.img-fluid
+{
+width:125%;
+}
+}
 
 /* Tablets */
 @media only screen and (min-width:576px){

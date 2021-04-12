@@ -98,6 +98,8 @@ function SignUp() {
                         onClick={handleSignUp}>Submit</Button>
                     <br>
                     </br>
+                    <br>
+                    </br>
                     <a href="/">Already have an account?</a>
                 </div>
             </Container>
