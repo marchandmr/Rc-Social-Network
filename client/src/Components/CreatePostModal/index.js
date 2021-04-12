@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import { Link } from "react-router-dom"
 
+
 function CreatePostModal(props) {
 
     const [formObject, setFormObject] = useState({})
