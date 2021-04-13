@@ -226,7 +226,7 @@ width:125%;
     }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   header.masthead {
     padding-top: 17rem;
     padding-bottom: 12.5rem;
