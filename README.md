@@ -6,6 +6,8 @@
   
   RC spots is a social media platform for RC car enthusiasts. The purpose of this website is to give the RC community a place to share their favorite locations to drive.
 
+![](client/public/img.png)
+
 
   ## Table Of Contents
 
