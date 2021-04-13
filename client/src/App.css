@@ -233,6 +233,7 @@ width:125%;
   }
   .postInfo {  
     text-align: left; 
+    clear: both;
   }
   .userNav {
     font-size: 20px;
@@ -341,7 +342,7 @@ html, body{
 .footer{
   margin-top: 1rem;
   padding: 1rem;
-  background-color: red;
+  background-color: #161a1d;
   height:6%;
   position: fixed;
   bottom: 0;
