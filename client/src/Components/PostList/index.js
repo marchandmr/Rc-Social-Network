@@ -39,10 +39,10 @@ export function ListItem(props) {
             <li className="list-group-item">
                 <Container fluid>
                     <Row>
-                        <Col className="imgContainer">
+                        <Col sm className="imgContainer">
                             <a href={props.imageLink}><img className="itemImg" src={props.imageLink} alt="userimage"></img> </a>
                         </Col>
-                        <Col className="postInfo">
+                        <Col sm className="postInfo">
                             <p className="itemDate"><strong>Date: </strong> {processDate(props.date)}</p>
                             <p className="itemCity"><strong>City: </strong>{props.city}</p>
                             <p className="itemState"><strong>State: </strong>{props.state}</p>
