@@ -270,6 +270,23 @@ width:125%;
   .submitBtn{
     width: 15%;  
   }
+
+  .list-overflow-container {  
+    /* overflow-y: scroll;    */
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .itemImg {
+    float: left;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .imgContainer {
+    display: inline !important;
+  }
 }
 
 
@@ -320,24 +337,7 @@ html, body{
    }
 }
 
-@media (min-width: 768px) {
-  .list-overflow-container {  
-    /* overflow-y: scroll;    */
-    margin-left: 100px;
-    margin-right: 100px;
-  }
-  .itemImg {
-    float: left;
-    margin-bottom: 15px;
-    max-width: 100%;
-    height: auto;
-  }
 
-  .imgContainer {
-    display: inline;
-  }
-
-}
 
 .footer{
   margin-top: 1rem;
