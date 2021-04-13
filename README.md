@@ -40,6 +40,11 @@
 
   MIT
 
+
+## Technologies Used
+
+HTML, CSS, React, Node, Express, AnimeJS, Cloudinary, Javascript, MongoDB, Mongoose, Bootstrap, Bcrypt, Multer, Nodemon, Passport, Cors
+
 ## Questions
 
   for any questions or inquiries  please feel free to message me on Github at: https://github.com/marchandmr
