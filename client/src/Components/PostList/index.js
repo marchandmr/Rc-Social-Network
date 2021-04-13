@@ -20,7 +20,7 @@ export function ListItem(props) {
     function checkLinkExists() {
         if (props.exactlocation) {
             // exists
-            return <a href={props.exactlocation} target="_blank">Link</a>
+            return <a href={props.exactlocation} target="_blank" rel="noreferrer">Link</a>
         } else {
             // DNE
             return <span>N/A</span>

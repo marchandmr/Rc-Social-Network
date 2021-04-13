@@ -270,5 +270,116 @@ width:125%;
     width: 15%;  
   }
 }
- 
+
+
+/* Heroku Debug */
+.list-overflow-container {
+  max-height: 800px;
+  min-height: 200px;
+  border: 1px #DDDDDD solid;
+  border-radius: 4px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+ul {
+  list-style-type: none;  
+
+}
+
+li, hr {
+  clear: both;
+  
+}
+
+hr {
+  margin-right: 20px;
+}
+
+html, body{
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+@media only screen and (min-width:360px){
+  .list-overflow-container {    
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  } 
+   .imgContainer{
+     display: flex;
+     justify-content: center;  
+     max-width: 50%;
+   }
+}
+
+@media (min-width: 768px) {
+  .list-overflow-container {  
+    /* overflow-y: scroll;    */
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .itemImg {
+    float: left;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .imgContainer {
+    display: inline;
+  }
+
+}
+
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #161a1d;
+  height:6%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid gray;
+}
+
+.footerText
+{
+    font-size: 15px;
+    color: #fff;
+}
+
+.signup{
+  color: whitesmoke;
+}
+
+.list-group-item
+{
+  background-color:#fff; 
+}
+
+.signupContainer
+
+{
+  background-image: url("../src/assets/img/footer_lodyas.png");
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 25px;
+  border: 1px solid gray;
+}
+
+.jumboHead
+{
+   
+    font-family: 'Racing Sans One', cursive;
+    font-size: 75px !important;
+}
+
   
