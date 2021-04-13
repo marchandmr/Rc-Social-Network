@@ -6,7 +6,6 @@ function Masthead() {
     return (
         <>
         <header className="masthead">
-    
         </header>    
         </>
     )
