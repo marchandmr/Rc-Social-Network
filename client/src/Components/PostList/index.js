@@ -1,6 +1,7 @@
 import React from "react"
 import moment from "moment"
-import "./style.css"
+// import "./style.css"
+import '../../App.css';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container"
